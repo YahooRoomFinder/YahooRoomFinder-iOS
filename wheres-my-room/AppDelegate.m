@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "View/MapViewController.h"
+#import "View/FloorsViewController.h"
+#import "Control/Utils.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[MapViewController alloc] init];
+    //self.window.rootViewController = [[MapViewController alloc] init];
+    self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorsViewController alloc] init]];
     [self.window makeKeyAndVisible];
     return YES;
 }
