@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Floor.h"
+
+@protocol FloorsViewDelegate <NSObject>
+@optional
+- (void)floorSelected:(Floor*)floor;
+@end
 
 @interface FloorsViewController : UIViewController
-
+@property (strong, nonatomic) id<FloorsViewDelegate> delegate;
 @end

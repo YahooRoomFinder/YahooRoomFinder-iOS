@@ -50,6 +50,14 @@ NSString * const FLOOR_CELL = @"FloorCell";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate != nil) {
+        Floor *floor = self.floors[indexPath.row];
+        [self.delegate floorSelected:floor];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 

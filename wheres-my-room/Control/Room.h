@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+// Use it for the response of the API http://matteflat.corp.sg3.yahoo.com/room/v0/room?query=-TW-
 @interface Room : NSObject
-@property (strong, nonatomic) NSString* roomId;
-@property (assign, nonatomic) NSInteger capacity;
-@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSString *roomId;
+@property (strong, nonatomic) NSString *name;
 @end
