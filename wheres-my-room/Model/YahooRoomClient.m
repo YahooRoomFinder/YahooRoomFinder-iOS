@@ -8,7 +8,7 @@
 
 #import "YahooRoomClient.h"
 #import "Floor.h"
-#import "Room.h"
+#import "RoomMeetingInfo.h"
 
 @implementation YahooRoomClient
 + (YahooRoomClient *) sharedInstance {
