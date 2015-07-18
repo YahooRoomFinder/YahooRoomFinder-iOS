@@ -13,19 +13,22 @@
 		5E66EEF91B55E97200F0F2B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EEF81B55E97200F0F2B1 /* Images.xcassets */; };
 		5E66EEFC1B55E97200F0F2B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EEFA1B55E97200F0F2B1 /* LaunchScreen.xib */; };
 		5E66EF081B55E97200F0F2B1 /* wheres_my_roomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF071B55E97200F0F2B1 /* wheres_my_roomTests.m */; };
-		5E66EF1F1B55EBC200F0F2B1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF1D1B55EBC200F0F2B1 /* MapViewController.m */; };
-		5E66EF201B55EBC200F0F2B1 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EF1E1B55EBC200F0F2B1 /* MapViewController.xib */; };
-		5E66EF271B57BCB200F0F2B1 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF261B57BCB200F0F2B1 /* Floor.m */; };
-		5E66EF2A1B57BCD600F0F2B1 /* RoomsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF291B57BCD600F0F2B1 /* RoomsManager.m */; };
-		5E66EF2D1B57BEE100F0F2B1 /* RoomMeetingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF2C1B57BEE100F0F2B1 /* RoomMeetingInfo.m */; };
-		5E66EF301B57BFDB00F0F2B1 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF2F1B57BFDB00F0F2B1 /* Meeting.m */; };
+		5E66EF1F1B55EBC200F0F2B1 /* FloorMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF1D1B55EBC200F0F2B1 /* FloorMapViewController.m */; };
+		5E66EF201B55EBC200F0F2B1 /* FloorMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EF1E1B55EBC200F0F2B1 /* FloorMapViewController.xib */; };
+		5E66EF2A1B57BCD600F0F2B1 /* RoomsLocalityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF291B57BCD600F0F2B1 /* RoomsLocalityManager.m */; };
 		5E66EF371B57C21600F0F2B1 /* FloorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF351B57C21600F0F2B1 /* FloorsViewController.m */; };
 		5E66EF381B57C21600F0F2B1 /* FloorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EF361B57C21600F0F2B1 /* FloorsViewController.xib */; };
-		5E66EF3B1B57C35600F0F2B1 /* YahooRoomClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF3A1B57C35600F0F2B1 /* YahooRoomClient.m */; };
 		5E66EF471B57C96400F0F2B1 /* FloorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF451B57C96400F0F2B1 /* FloorCell.m */; };
 		5E66EF481B57C96400F0F2B1 /* FloorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EF461B57C96400F0F2B1 /* FloorCell.xib */; };
 		5E66EF4B1B57CC1600F0F2B1 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF4A1B57CC1600F0F2B1 /* Utils.m */; };
-		5E66EF4E1B57F39900F0F2B1 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF4D1B57F39900F0F2B1 /* Room.m */; };
+		5E66EF501B58905B00F0F2B1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E66EF4F1B58905B00F0F2B1 /* MapKit.framework */; };
+		5E66EF5A1B5A1F1600F0F2B1 /* YahooRoomsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF591B5A1F1600F0F2B1 /* YahooRoomsManager.m */; };
+		5E66EF671B5A1FB900F0F2B1 /* BeaconNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF5C1B5A1FB900F0F2B1 /* BeaconNode.m */; };
+		5E66EF691B5A1FB900F0F2B1 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF601B5A1FB900F0F2B1 /* Meeting.m */; };
+		5E66EF6A1B5A1FB900F0F2B1 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF621B5A1FB900F0F2B1 /* Room.m */; };
+		5E66EF6B1B5A1FB900F0F2B1 /* RoomLocalityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF641B5A1FB900F0F2B1 /* RoomLocalityInfo.m */; };
+		5E66EF6C1B5A1FB900F0F2B1 /* RoomMeetingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF661B5A1FB900F0F2B1 /* RoomMeetingInfo.m */; };
+		5E66EF6F1B5A1FE400F0F2B1 /* FloorLocalityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF6E1B5A1FE400F0F2B1 /* FloorLocalityInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,29 +54,35 @@
 		5E66EF011B55E97200F0F2B1 /* wheres-my-roomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wheres-my-roomTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E66EF061B55E97200F0F2B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E66EF071B55E97200F0F2B1 /* wheres_my_roomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wheres_my_roomTests.m; sourceTree = "<group>"; };
-		5E66EF1C1B55EBC200F0F2B1 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = View/MapViewController.h; sourceTree = "<group>"; };
-		5E66EF1D1B55EBC200F0F2B1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = View/MapViewController.m; sourceTree = "<group>"; };
-		5E66EF1E1B55EBC200F0F2B1 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = View/MapViewController.xib; sourceTree = "<group>"; };
-		5E66EF251B57BCB200F0F2B1 /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Floor.h; path = Control/Floor.h; sourceTree = "<group>"; };
-		5E66EF261B57BCB200F0F2B1 /* Floor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Floor.m; path = Control/Floor.m; sourceTree = "<group>"; };
-		5E66EF281B57BCD600F0F2B1 /* RoomsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomsManager.h; path = Control/RoomsManager.h; sourceTree = "<group>"; };
-		5E66EF291B57BCD600F0F2B1 /* RoomsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomsManager.m; path = Control/RoomsManager.m; sourceTree = "<group>"; };
-		5E66EF2B1B57BEE100F0F2B1 /* RoomMeetingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomMeetingInfo.h; path = Control/RoomMeetingInfo.h; sourceTree = "<group>"; };
-		5E66EF2C1B57BEE100F0F2B1 /* RoomMeetingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomMeetingInfo.m; path = Control/RoomMeetingInfo.m; sourceTree = "<group>"; };
-		5E66EF2E1B57BFDB00F0F2B1 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meeting.h; path = Control/Meeting.h; sourceTree = "<group>"; };
-		5E66EF2F1B57BFDB00F0F2B1 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Meeting.m; path = Control/Meeting.m; sourceTree = "<group>"; };
+		5E66EF1C1B55EBC200F0F2B1 /* FloorMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FloorMapViewController.h; path = View/FloorMapViewController.h; sourceTree = "<group>"; };
+		5E66EF1D1B55EBC200F0F2B1 /* FloorMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FloorMapViewController.m; path = View/FloorMapViewController.m; sourceTree = "<group>"; };
+		5E66EF1E1B55EBC200F0F2B1 /* FloorMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FloorMapViewController.xib; path = View/FloorMapViewController.xib; sourceTree = "<group>"; };
+		5E66EF281B57BCD600F0F2B1 /* RoomsLocalityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomsLocalityManager.h; path = Control/RoomsLocalityManager.h; sourceTree = "<group>"; };
+		5E66EF291B57BCD600F0F2B1 /* RoomsLocalityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomsLocalityManager.m; path = Control/RoomsLocalityManager.m; sourceTree = "<group>"; };
 		5E66EF341B57C21600F0F2B1 /* FloorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FloorsViewController.h; path = View/FloorsViewController.h; sourceTree = "<group>"; };
 		5E66EF351B57C21600F0F2B1 /* FloorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FloorsViewController.m; path = View/FloorsViewController.m; sourceTree = "<group>"; };
 		5E66EF361B57C21600F0F2B1 /* FloorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FloorsViewController.xib; path = View/FloorsViewController.xib; sourceTree = "<group>"; };
-		5E66EF391B57C35600F0F2B1 /* YahooRoomClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YahooRoomClient.h; path = Model/YahooRoomClient.h; sourceTree = "<group>"; };
-		5E66EF3A1B57C35600F0F2B1 /* YahooRoomClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YahooRoomClient.m; path = Model/YahooRoomClient.m; sourceTree = "<group>"; };
 		5E66EF441B57C96400F0F2B1 /* FloorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FloorCell.h; path = View/FloorCell.h; sourceTree = "<group>"; };
 		5E66EF451B57C96400F0F2B1 /* FloorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FloorCell.m; path = View/FloorCell.m; sourceTree = "<group>"; };
 		5E66EF461B57C96400F0F2B1 /* FloorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FloorCell.xib; path = View/FloorCell.xib; sourceTree = "<group>"; };
 		5E66EF491B57CC1600F0F2B1 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Control/Utils.h; sourceTree = "<group>"; };
 		5E66EF4A1B57CC1600F0F2B1 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Control/Utils.m; sourceTree = "<group>"; };
-		5E66EF4C1B57F39900F0F2B1 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Room.h; path = Control/Room.h; sourceTree = "<group>"; };
-		5E66EF4D1B57F39900F0F2B1 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room.m; path = Control/Room.m; sourceTree = "<group>"; };
+		5E66EF4F1B58905B00F0F2B1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5E66EF581B5A1F1600F0F2B1 /* YahooRoomsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YahooRoomsManager.h; path = Control/YahooRoomsManager.h; sourceTree = "<group>"; };
+		5E66EF591B5A1F1600F0F2B1 /* YahooRoomsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YahooRoomsManager.m; path = Control/YahooRoomsManager.m; sourceTree = "<group>"; };
+		5E66EF5B1B5A1FB900F0F2B1 /* BeaconNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconNode.h; path = Model/BeaconNode.h; sourceTree = "<group>"; };
+		5E66EF5C1B5A1FB900F0F2B1 /* BeaconNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconNode.m; path = Model/BeaconNode.m; sourceTree = "<group>"; };
+		5E66EF5D1B5A1FB900F0F2B1 /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Floor.h; path = Model/Floor.h; sourceTree = "<group>"; };
+		5E66EF5F1B5A1FB900F0F2B1 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meeting.h; path = Model/Meeting.h; sourceTree = "<group>"; };
+		5E66EF601B5A1FB900F0F2B1 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Meeting.m; path = Model/Meeting.m; sourceTree = "<group>"; };
+		5E66EF611B5A1FB900F0F2B1 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Room.h; path = Model/Room.h; sourceTree = "<group>"; };
+		5E66EF621B5A1FB900F0F2B1 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room.m; path = Model/Room.m; sourceTree = "<group>"; };
+		5E66EF631B5A1FB900F0F2B1 /* RoomLocalityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomLocalityInfo.h; path = Model/RoomLocalityInfo.h; sourceTree = "<group>"; };
+		5E66EF641B5A1FB900F0F2B1 /* RoomLocalityInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomLocalityInfo.m; path = Model/RoomLocalityInfo.m; sourceTree = "<group>"; };
+		5E66EF651B5A1FB900F0F2B1 /* RoomMeetingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomMeetingInfo.h; path = Model/RoomMeetingInfo.h; sourceTree = "<group>"; };
+		5E66EF661B5A1FB900F0F2B1 /* RoomMeetingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomMeetingInfo.m; path = Model/RoomMeetingInfo.m; sourceTree = "<group>"; };
+		5E66EF6D1B5A1FE400F0F2B1 /* FloorLocalityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FloorLocalityInfo.h; path = Model/FloorLocalityInfo.h; sourceTree = "<group>"; };
+		5E66EF6E1B5A1FE400F0F2B1 /* FloorLocalityInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FloorLocalityInfo.m; path = Model/FloorLocalityInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E66EF501B58905B00F0F2B1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +107,7 @@
 		5E66EEDF1B55E97200F0F2B1 = {
 			isa = PBXGroup;
 			children = (
+				5E66EF4F1B58905B00F0F2B1 /* MapKit.framework */,
 				5E66EEEA1B55E97200F0F2B1 /* wheres-my-room */,
 				5E66EF041B55E97200F0F2B1 /* wheres-my-roomTests */,
 				5E66EEE91B55E97200F0F2B1 /* Products */,
@@ -115,6 +126,7 @@
 		5E66EEEA1B55E97200F0F2B1 /* wheres-my-room */ = {
 			isa = PBXGroup;
 			children = (
+				5E66EF571B5A1BBB00F0F2B1 /* Model */,
 				5E66EF211B57BB6D00F0F2B1 /* Control */,
 				5E66EF121B55EA5B00F0F2B1 /* View */,
 				5E66EEEF1B55E97200F0F2B1 /* AppDelegate.h */,
@@ -157,9 +169,9 @@
 		5E66EF121B55EA5B00F0F2B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5E66EF1C1B55EBC200F0F2B1 /* MapViewController.h */,
-				5E66EF1D1B55EBC200F0F2B1 /* MapViewController.m */,
-				5E66EF1E1B55EBC200F0F2B1 /* MapViewController.xib */,
+				5E66EF1C1B55EBC200F0F2B1 /* FloorMapViewController.h */,
+				5E66EF1D1B55EBC200F0F2B1 /* FloorMapViewController.m */,
+				5E66EF1E1B55EBC200F0F2B1 /* FloorMapViewController.xib */,
 				5E66EF341B57C21600F0F2B1 /* FloorsViewController.h */,
 				5E66EF351B57C21600F0F2B1 /* FloorsViewController.m */,
 				5E66EF361B57C21600F0F2B1 /* FloorsViewController.xib */,
@@ -173,22 +185,34 @@
 		5E66EF211B57BB6D00F0F2B1 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				5E66EF281B57BCD600F0F2B1 /* RoomsManager.h */,
-				5E66EF291B57BCD600F0F2B1 /* RoomsManager.m */,
-				5E66EF251B57BCB200F0F2B1 /* Floor.h */,
-				5E66EF261B57BCB200F0F2B1 /* Floor.m */,
-				5E66EF2B1B57BEE100F0F2B1 /* RoomMeetingInfo.h */,
-				5E66EF2C1B57BEE100F0F2B1 /* RoomMeetingInfo.m */,
-				5E66EF2E1B57BFDB00F0F2B1 /* Meeting.h */,
-				5E66EF2F1B57BFDB00F0F2B1 /* Meeting.m */,
-				5E66EF391B57C35600F0F2B1 /* YahooRoomClient.h */,
-				5E66EF3A1B57C35600F0F2B1 /* YahooRoomClient.m */,
+				5E66EF581B5A1F1600F0F2B1 /* YahooRoomsManager.h */,
+				5E66EF591B5A1F1600F0F2B1 /* YahooRoomsManager.m */,
+				5E66EF281B57BCD600F0F2B1 /* RoomsLocalityManager.h */,
+				5E66EF291B57BCD600F0F2B1 /* RoomsLocalityManager.m */,
 				5E66EF491B57CC1600F0F2B1 /* Utils.h */,
 				5E66EF4A1B57CC1600F0F2B1 /* Utils.m */,
-				5E66EF4C1B57F39900F0F2B1 /* Room.h */,
-				5E66EF4D1B57F39900F0F2B1 /* Room.m */,
 			);
 			name = Control;
+			sourceTree = "<group>";
+		};
+		5E66EF571B5A1BBB00F0F2B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E66EF5B1B5A1FB900F0F2B1 /* BeaconNode.h */,
+				5E66EF5C1B5A1FB900F0F2B1 /* BeaconNode.m */,
+				5E66EF5D1B5A1FB900F0F2B1 /* Floor.h */,
+				5E66EF5F1B5A1FB900F0F2B1 /* Meeting.h */,
+				5E66EF601B5A1FB900F0F2B1 /* Meeting.m */,
+				5E66EF611B5A1FB900F0F2B1 /* Room.h */,
+				5E66EF621B5A1FB900F0F2B1 /* Room.m */,
+				5E66EF631B5A1FB900F0F2B1 /* RoomLocalityInfo.h */,
+				5E66EF641B5A1FB900F0F2B1 /* RoomLocalityInfo.m */,
+				5E66EF651B5A1FB900F0F2B1 /* RoomMeetingInfo.h */,
+				5E66EF661B5A1FB900F0F2B1 /* RoomMeetingInfo.m */,
+				5E66EF6D1B5A1FE400F0F2B1 /* FloorLocalityInfo.h */,
+				5E66EF6E1B5A1FE400F0F2B1 /* FloorLocalityInfo.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +297,7 @@
 			files = (
 				5E66EEFC1B55E97200F0F2B1 /* LaunchScreen.xib in Resources */,
 				5E66EF381B57C21600F0F2B1 /* FloorsViewController.xib in Resources */,
-				5E66EF201B55EBC200F0F2B1 /* MapViewController.xib in Resources */,
+				5E66EF201B55EBC200F0F2B1 /* FloorMapViewController.xib in Resources */,
 				5E66EEF91B55E97200F0F2B1 /* Images.xcassets in Resources */,
 				5E66EF481B57C96400F0F2B1 /* FloorCell.xib in Resources */,
 			);
@@ -293,19 +317,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E66EF4E1B57F39900F0F2B1 /* Room.m in Sources */,
+				5E66EF6A1B5A1FB900F0F2B1 /* Room.m in Sources */,
 				5E66EF471B57C96400F0F2B1 /* FloorCell.m in Sources */,
-				5E66EF271B57BCB200F0F2B1 /* Floor.m in Sources */,
+				5E66EF691B5A1FB900F0F2B1 /* Meeting.m in Sources */,
 				5E66EEF41B55E97200F0F2B1 /* ViewController.m in Sources */,
 				5E66EF4B1B57CC1600F0F2B1 /* Utils.m in Sources */,
-				5E66EF3B1B57C35600F0F2B1 /* YahooRoomClient.m in Sources */,
-				5E66EF2A1B57BCD600F0F2B1 /* RoomsManager.m in Sources */,
+				5E66EF671B5A1FB900F0F2B1 /* BeaconNode.m in Sources */,
+				5E66EF5A1B5A1F1600F0F2B1 /* YahooRoomsManager.m in Sources */,
+				5E66EF2A1B57BCD600F0F2B1 /* RoomsLocalityManager.m in Sources */,
 				5E66EEF11B55E97200F0F2B1 /* AppDelegate.m in Sources */,
 				5E66EEEE1B55E97200F0F2B1 /* main.m in Sources */,
-				5E66EF301B57BFDB00F0F2B1 /* Meeting.m in Sources */,
-				5E66EF2D1B57BEE100F0F2B1 /* RoomMeetingInfo.m in Sources */,
-				5E66EF1F1B55EBC200F0F2B1 /* MapViewController.m in Sources */,
+				5E66EF6C1B5A1FB900F0F2B1 /* RoomMeetingInfo.m in Sources */,
+				5E66EF1F1B55EBC200F0F2B1 /* FloorMapViewController.m in Sources */,
+				5E66EF6F1B5A1FE400F0F2B1 /* FloorLocalityInfo.m in Sources */,
 				5E66EF371B57C21600F0F2B1 /* FloorsViewController.m in Sources */,
+				5E66EF6B1B5A1FB900F0F2B1 /* RoomLocalityInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +518,7 @@
 				5E66EF0D1B55E97200F0F2B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E66EF0E1B55E97200F0F2B1 /* Build configuration list for PBXNativeTarget "wheres-my-roomTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +527,7 @@
 				5E66EF101B55E97200F0F2B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

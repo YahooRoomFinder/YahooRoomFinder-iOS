@@ -11,7 +11,7 @@
 
 @protocol FloorsViewDelegate <NSObject>
 @optional
-- (void)floorSelected:(Floor*)floor;
+- (void)floorSelected:(id<Floor>)floor;
 @end
 
 @interface FloorsViewController : UIViewController

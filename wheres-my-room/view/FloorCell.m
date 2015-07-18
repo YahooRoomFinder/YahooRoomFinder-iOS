@@ -25,7 +25,7 @@
     // Configure the view for the selected state
 }
 
-- (void)initWithFloor:(Floor*)floor {
+- (void)initWithFloor:(id<Floor>)floor {
     self.nameLabel.text = [NSString stringWithFormat:@"%ld F", floor.order];
 }
 

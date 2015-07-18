@@ -7,12 +7,16 @@
 //
 
 #import "FloorsViewController.h"
-#import "YahooRoomClient.h"
+#import "../Control/YahooRoomsManager.h"
+#import "../Control/RoomsLocalityManager.h"
+#import "../Model/Floor.h"
 #import "FloorCell.h"
 
 @interface FloorsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *floorsTable;
-@property (strong, nonatomic) YahooRoomClient *client;
+@property (strong, nonatomic) RoomsLocalityManager *roomsLocalityManager;
+
+// Array of FloorLocalityInfo
 @property (strong, nonatomic) NSArray *floors;
 @end
 
@@ -27,8 +31,8 @@ NSString * const FLOOR_CELL = @"FloorCell";
     self.floorsTable.delegate = self;
     
     [self.floorsTable registerNib:[UINib nibWithNibName: NSStringFromClass([FloorCell class]) bundle:nil] forCellReuseIdentifier:FLOOR_CELL];
-    self.client = [YahooRoomClient sharedInstance];
-    [self.client getFloors:^(NSArray *floors, NSError *error) {
+    self.roomsLocalityManager = [RoomsLocalityManager sharedInstance];
+    [self.roomsLocalityManager floors:^(NSArray *floors, NSError *error) {
         self.floors = floors;
         [self.floorsTable reloadData];
     }];
@@ -45,14 +49,14 @@ NSString * const FLOOR_CELL = @"FloorCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FloorCell *cell = [self.floorsTable dequeueReusableCellWithIdentifier:FLOOR_CELL];
-    Floor* floor = self.floors[indexPath.row];
+    id<Floor> floor = self.floors[indexPath.row];
     [cell initWithFloor:floor];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.delegate != nil) {
-        Floor *floor = self.floors[indexPath.row];
+        id<Floor> floor = self.floors[indexPath.row];
         [self.delegate floorSelected:floor];
     }
     [self dismissViewControllerAnimated:YES completion:nil];

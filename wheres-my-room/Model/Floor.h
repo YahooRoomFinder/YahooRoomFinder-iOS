@@ -1,5 +1,5 @@
 //
-//  RoomsManager.h
+//  Floor.h
 //  wheres-my-room
 //
 //  Created by Chu-An Hsieh on 7/16/15.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RoomsManager : NSObject
+@protocol Floor
 
+// For 1st floor, it should be 0; for 2nd floor, it should be 1.
+@property (assign, nonatomic) NSInteger order;
 @end

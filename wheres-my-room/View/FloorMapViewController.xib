@@ -4,8 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FloorMapViewController">
             <connections>
+                <outlet property="mapView" destination="rn5-aj-TLo" id="GCU-4f-Nol"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,16 +24,39 @@
                         <rect key="frame" x="179" y="289" width="61" height="21"/>
                     </variation>
                 </label>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rn5-aj-TLo">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </mapView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rn5-aj-TLo" secondAttribute="trailing" id="83e-ac-CPp"/>
+                <constraint firstItem="rn5-aj-TLo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ALY-PB-ap1"/>
+                <constraint firstAttribute="bottom" secondItem="rn5-aj-TLo" secondAttribute="bottom" id="CgY-m5-nQE"/>
+                <constraint firstItem="rn5-aj-TLo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="x4v-Ad-jIY"/>
+            </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="Dd7-o2-QPm"/>
+                    <exclude reference="rn5-aj-TLo"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="83e-ac-CPp"/>
+                    <exclude reference="ALY-PB-ap1"/>
+                    <exclude reference="CgY-m5-nQE"/>
+                    <exclude reference="x4v-Ad-jIY"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
                     <include reference="Dd7-o2-QPm"/>
+                    <include reference="rn5-aj-TLo"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="83e-ac-CPp"/>
+                    <include reference="ALY-PB-ap1"/>
+                    <include reference="CgY-m5-nQE"/>
+                    <include reference="x4v-Ad-jIY"/>
                 </mask>
             </variation>
         </view>

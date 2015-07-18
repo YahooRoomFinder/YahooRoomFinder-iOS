@@ -10,5 +10,5 @@
 #import "Floor.h"
 
 @interface FloorCell : UITableViewCell
-- (void)initWithFloor:(Floor*)floor;
+- (void)initWithFloor:(id<Floor>)floor;
 @end
