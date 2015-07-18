@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapViewController : UIViewController
+@interface FloorMapViewController : UIViewController
 
 @end

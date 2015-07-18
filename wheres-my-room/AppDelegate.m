@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "View/MapViewController.h"
+#import "View/FloorMapViewController.h"
 #import "View/FloorsViewController.h"
 #import "Control/Utils.h"
 
@@ -21,7 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     //self.window.rootViewController = [[MapViewController alloc] init];
-    self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorsViewController alloc] init]];
+    //self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorsViewController alloc] init]];
+    self.window.rootViewController = [[FloorMapViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
 }

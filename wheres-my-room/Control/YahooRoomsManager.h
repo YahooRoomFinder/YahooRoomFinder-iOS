@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YahooRoomClient : NSObject
-+ (YahooRoomClient *) sharedInstance;
-- (void) getFloors:(void(^)(NSArray *floors, NSError *error))completion;
+@interface YahooRoomsManager : NSObject
++ (YahooRoomsManager *) sharedInstance;
 @end
