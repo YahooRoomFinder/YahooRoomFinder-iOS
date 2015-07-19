@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "View/FloorMapViewController.h"
 #import "View/FloorsViewController.h"
+#import "View/FloorMapViewController2.h"
 #import "Control/Utils.h"
 #import "KDNBeaconManager.h"
 
@@ -23,7 +24,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     //self.window.rootViewController = [[MapViewController alloc] init];
     //self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorsViewController alloc] init]];
-    self.window.rootViewController = [[FloorMapViewController alloc] init];
+    //self.window.rootViewController = [[FloorMapViewController alloc] init];
+    self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]];
     [self.window makeKeyAndVisible];
 
     // notification
