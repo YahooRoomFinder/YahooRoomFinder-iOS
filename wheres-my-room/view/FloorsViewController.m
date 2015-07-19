@@ -36,6 +36,10 @@ NSString * const FLOOR_CELL = @"FloorCell";
         self.floors = floors;
         [self.floorsTable reloadData];
     }];
+    // Prevent the navigation bar from overlapping the view
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +63,8 @@ NSString * const FLOOR_CELL = @"FloorCell";
         id<Floor> floor = self.floors[indexPath.row];
         [self.delegate floorSelected:floor];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

@@ -26,7 +26,7 @@
 }
 
 - (void)initWithFloor:(id<Floor>)floor {
-    self.nameLabel.text = [NSString stringWithFormat:@"%ld F", floor.order];
+    self.nameLabel.text = [NSString stringWithFormat:@"%ld F", floor.order + 1];
 }
 
 @end
