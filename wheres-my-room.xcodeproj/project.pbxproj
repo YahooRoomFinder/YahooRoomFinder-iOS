@@ -29,6 +29,8 @@
 		5E66EF6B1B5A1FB900F0F2B1 /* RoomLocalityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF641B5A1FB900F0F2B1 /* RoomLocalityInfo.m */; };
 		5E66EF6C1B5A1FB900F0F2B1 /* RoomMeetingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF661B5A1FB900F0F2B1 /* RoomMeetingInfo.m */; };
 		5E66EF6F1B5A1FE400F0F2B1 /* FloorLocalityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EF6E1B5A1FE400F0F2B1 /* FloorLocalityInfo.m */; };
+		D43698EC1B5BD73F00E9D094 /* BeaconItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D43698E91B5BD73F00E9D094 /* BeaconItem.m */; };
+		D43698ED1B5BD73F00E9D094 /* KDNBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D43698EB1B5BD73F00E9D094 /* KDNBeaconManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		5E66EF661B5A1FB900F0F2B1 /* RoomMeetingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomMeetingInfo.m; path = Model/RoomMeetingInfo.m; sourceTree = "<group>"; };
 		5E66EF6D1B5A1FE400F0F2B1 /* FloorLocalityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FloorLocalityInfo.h; path = Model/FloorLocalityInfo.h; sourceTree = "<group>"; };
 		5E66EF6E1B5A1FE400F0F2B1 /* FloorLocalityInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FloorLocalityInfo.m; path = Model/FloorLocalityInfo.m; sourceTree = "<group>"; };
+		D43698E81B5BD73F00E9D094 /* BeaconItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconItem.h; sourceTree = "<group>"; };
+		D43698E91B5BD73F00E9D094 /* BeaconItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconItem.m; sourceTree = "<group>"; };
+		D43698EA1B5BD73F00E9D094 /* KDNBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDNBeaconManager.h; sourceTree = "<group>"; };
+		D43698EB1B5BD73F00E9D094 /* KDNBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDNBeaconManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,10 @@
 				5E66EF121B55EA5B00F0F2B1 /* View */,
 				5E66EEEF1B55E97200F0F2B1 /* AppDelegate.h */,
 				5E66EEF01B55E97200F0F2B1 /* AppDelegate.m */,
+				D43698E81B5BD73F00E9D094 /* BeaconItem.h */,
+				D43698E91B5BD73F00E9D094 /* BeaconItem.m */,
+				D43698EA1B5BD73F00E9D094 /* KDNBeaconManager.h */,
+				D43698EB1B5BD73F00E9D094 /* KDNBeaconManager.m */,
 				5E66EEF21B55E97200F0F2B1 /* ViewController.h */,
 				5E66EEF31B55E97200F0F2B1 /* ViewController.m */,
 				5E66EEF81B55E97200F0F2B1 /* Images.xcassets */,
@@ -264,6 +274,11 @@
 				TargetAttributes = {
 					5E66EEE71B55E97200F0F2B1 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5E66EF001B55E97200F0F2B1 = {
 						CreatedOnToolsVersion = 6.4;
@@ -323,6 +338,7 @@
 				5E66EEF41B55E97200F0F2B1 /* ViewController.m in Sources */,
 				5E66EF4B1B57CC1600F0F2B1 /* Utils.m in Sources */,
 				5E66EF671B5A1FB900F0F2B1 /* BeaconNode.m in Sources */,
+				D43698ED1B5BD73F00E9D094 /* KDNBeaconManager.m in Sources */,
 				5E66EF5A1B5A1F1600F0F2B1 /* YahooRoomsManager.m in Sources */,
 				5E66EF2A1B57BCD600F0F2B1 /* RoomsLocalityManager.m in Sources */,
 				5E66EEF11B55E97200F0F2B1 /* AppDelegate.m in Sources */,
@@ -331,6 +347,7 @@
 				5E66EF1F1B55EBC200F0F2B1 /* FloorMapViewController.m in Sources */,
 				5E66EF6F1B5A1FE400F0F2B1 /* FloorLocalityInfo.m in Sources */,
 				5E66EF371B57C21600F0F2B1 /* FloorsViewController.m in Sources */,
+				D43698EC1B5BD73F00E9D094 /* BeaconItem.m in Sources */,
 				5E66EF6B1B5A1FB900F0F2B1 /* RoomLocalityInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
