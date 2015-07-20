@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Chu-An Hsieh. All rights reserved.
 //
 
-#import "BeaconNode.h"
+#import "BeaconLocalityInfo.h"
 
-@implementation BeaconNode
+@implementation BeaconLocalityInfo
 
 @end

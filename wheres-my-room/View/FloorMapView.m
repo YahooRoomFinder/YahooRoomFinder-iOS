@@ -61,6 +61,7 @@
     [self addSubview:view];
     [self setNeedsUpdateConstraints];
     [self.mapImageView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
+    [self.mapImageView addObserver:self forKeyPath:@"image" options:0 context:nil];
 }
 
 - (void)resetCurrentRatioPoint {
