@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "View/FloorMapViewController.h"
 #import "View/FloorsViewController.h"
 #import "View/FloorMapViewController2.h"
 #import "Control/Utils.h"

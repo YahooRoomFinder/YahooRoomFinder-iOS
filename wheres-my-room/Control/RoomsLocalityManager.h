@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "../Model/FloorLocalityInfo.h"
 
 @interface RoomsLocalityManager : NSObject
 
@@ -15,6 +16,8 @@
 // Get all the floors
 // floors: array of FloorLocalityInfo instances
 - (void) floors:(void(^)(NSArray *floors, NSError *error))completion;
+
+- (void) floorForOrder:(NSInteger) floorOrder complete:(void(^)(FloorLocalityInfo *floor, NSError *error))completion;
 
 // Get all the rooms of the given floor.
 // rooms: array of RoomLocalityInfo instances

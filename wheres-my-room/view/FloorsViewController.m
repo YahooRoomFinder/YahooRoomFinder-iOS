@@ -33,13 +33,27 @@ NSString * const FLOOR_CELL = @"FloorCell";
     [self.floorsTable registerNib:[UINib nibWithNibName: NSStringFromClass([FloorCell class]) bundle:nil] forCellReuseIdentifier:FLOOR_CELL];
     self.roomsLocalityManager = [RoomsLocalityManager sharedInstance];
     [self.roomsLocalityManager floors:^(NSArray *floors, NSError *error) {
-        self.floors = floors;
+        self.floors = [self sortFloors:floors];
         [self.floorsTable reloadData];
     }];
     // Prevent the navigation bar from overlapping the view
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+}
+
+- (NSArray*) sortFloors:(NSArray*) floors {
+    return [floors sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        FloorLocalityInfo *floor1 = obj1;
+        FloorLocalityInfo *floor2 = obj2;
+        if (floor1.order < floor2.order) {
+            return NSOrderedDescending;
+        } else if (floor2.order > floor2.order) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedSame;
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

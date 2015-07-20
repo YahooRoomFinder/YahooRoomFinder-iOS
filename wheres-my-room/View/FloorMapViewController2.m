@@ -9,12 +9,17 @@
 #import "FloorMapViewController2.h"
 #import "FloorsViewController.h"
 #import "FloorMapView.h"
+#import "../Control/RoomsLocalityManager.h"
 #import "Floor.h"
 
 @interface FloorMapViewController2 () <UIGestureRecognizerDelegate, FloorsViewDelegate>
 @property (weak, nonatomic) IBOutlet FloorMapView *floorMapView;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
 @property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchGesture;
+@property (strong, nonatomic) RoomsLocalityManager *roomsLocalityManager;
+
+// A dictionary mapping floor order to FloorLocalityInfo
+@property (strong, nonatomic) NSDictionary *floorsDic;
 
 @end
 
@@ -22,9 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.roomsLocalityManager = [RoomsLocalityManager sharedInstance];
     self.pinchGesture.delegate = self;
     [self.floorMapView showCurrentPoint:YES];
-    [self setCurrentFloor:12];
+    [self setCurrentFloor:11];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Floors" style:UIBarButtonItemStylePlain target:self action:@selector(doFloorSelect)];
     // Prevent the navigation bar from overlapping the view
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
@@ -39,8 +45,10 @@
 }
 
 - (void)setCurrentFloor:(NSInteger)floorOrder {
-    [self.floorMapView setMapImage:[UIImage imageNamed:[NSString stringWithFormat:@"TW-%ldF", floorOrder + 1]]];
-    self.navigationItem.title = [NSString stringWithFormat:@"%ld F", floorOrder + 1];
+    [self.roomsLocalityManager floorForOrder:floorOrder complete:^(FloorLocalityInfo *floor, NSError *error) {
+        self.navigationItem.title = [NSString stringWithFormat:@"%ld F", floor.order + 1];
+        [self.floorMapView setMapImage:[UIImage imageNamed:floor.mapImageName]];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

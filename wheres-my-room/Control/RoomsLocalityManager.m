@@ -40,23 +40,31 @@
     return instance;
 }
 
+- (FloorLocalityInfo*) getFloorInfoForOrder:(NSInteger)floorOrder {
+    NSDictionary *floorDic = [self.floors objectForKey:@(floorOrder)];
+    FloorLocalityInfo* floor = [[FloorLocalityInfo alloc] init];
+    floor.order = floorOrder;
+    floor.realWidthForMap = [floorDic[@"realWidth"] doubleValue];
+    floor.realHeightForMap = [floorDic[@"realHeight"] doubleValue];
+    floor.mapImageName = [NSString stringWithFormat:@"TW-%ldF", floorOrder + 1];
+    return floor;
+}
+
 - (void) floors:(void(^)(NSArray *floors, NSError *error))completion {
     // TODO Don't hard-code the data here
     NSMutableArray *floors = [NSMutableArray array];
-    for (int i = 10; i <= 16; ++i) {
-        FloorLocalityInfo* floor = [[FloorLocalityInfo alloc] init];
-        NSMutableArray *boundary = [NSMutableArray array];
-        for (NSDictionary* boundaryDic in self.building[@"boundary"]) {
-            CLLocation *loc = [[CLLocation alloc] initWithLatitude:[boundaryDic[@"lat"] doubleValue] longitude:[boundaryDic[@"lng"] doubleValue]];
-            [boundary addObject:loc];
-        }
-
-        floor.boundary = boundary;
-        floor.order = i - 1;
-        [floors addObject:floor];
+    for (id key in self.floors) {
+        NSInteger floorOrder = [key integerValue];
+        [floors addObject:[self getFloorInfoForOrder:floorOrder]];
     }
     completion(floors, nil);
 }
+
+- (void) floorForOrder:(NSInteger) floorOrder complete:(void(^)(FloorLocalityInfo *floor, NSError *error))completion {
+    completion([self getFloorInfoForOrder:floorOrder], nil);
+}
+
+
 - (void) roomsForFloorWithOrder:(NSInteger)floorOrder complete:(void(^)(NSArray *rooms, NSError *error))completion {
     NSDictionary *floorDic = self.floors[@(floorOrder)];
     if (floorDic == nil) {
@@ -146,317 +154,90 @@
 - (void)initFloors {
     self.floors =
     @{
-      @(12): @{
+      @(9): @{
+              @"realWidth": @(90.0),
+              @"realHeight": @(49.7277937),
+              @"rooms": @[]
+              },
+      @(10): @{
+              @"realWidth": @(90.04297994),
+              @"realHeight": @(49.59885387),
+              @"rooms": @[]
+              },
+      @(11): @{
+              @"realWidth": @(90.04297994),
+              @"realHeight": @(49.51289398),
               @"rooms": @[
                       @{
                           @"id": @"VC-TW-12FN-DajiaRiver",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.057412599999996),
-                                      @"lng": @(121.6151051)
-                                      },
-                                  @{
-                                      @"lat": @(25.0573786),
-                                      @"lng": @(121.6151025)
-                                      },
-                                  @{
-                                      @"lat": @(25.057371300000003),
-                                      @"lng": @(121.61522510000002)
-                                      },
-                                  @{
-                                      @"lat": @(25.057405899999996),
-                                      @"lng": @(121.6152271)
-                                      },
-                                  @{
-                                      @"lat": @(25.057412599999996),
-                                      @"lng": @(121.6151051)
-                                      },
-                                  
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FN-DanshuiRiver",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.057481800000005),
-                                      @"lng": @(121.6147014)
-                                      },
-                                  @{
-                                      @"lat": @(25.057436200000005),
-                                      @"lng": @(121.6147001)
-                                      },
-                                  @{
-                                      @"lat": @(25.057435000000005),
-                                      @"lng": @(121.6147336)
-                                      },
-                                  @{
-                                      @"lat": @(25.057480600000005),
-                                      @"lng": @(121.6147356)
-                                      },
-                                  @{
-                                      @"lat": @(25.057481800000005),
-                                      @"lng": @(121.6147014)
-                                      },
-                                  
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FN-DongshanRiver",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.0575371),
-                                      @"lng": @(121.6149643)
-                                      },
-                                  @{
-                                      @"lat": @(25.057491),
-                                      @"lng": @(121.6149603)
-                                      },
-                                  @{
-                                      @"lat": @(25.0574891),
-                                      @"lng": @(121.61498849999998)
-                                      },
-                                  @{
-                                      @"lat": @(25.0575346),
-                                      @"lng": @(121.6149912)
-                                      },
-                                  @{
-                                      @"lat": @(25.0575371),
-                                      @"lng": @(121.6149643)
-                                      },
-                                  
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FN-HoneymoonBay",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.057412499999998),
-                                      @"lng": @(121.61490190000002)
-                                      },
-                                  @{
-                                      @"lat": @(25.057385200000002),
-                                      @"lng": @(121.61489990000001)
-                                      },
-                                  @{
-                                      @"lat": @(25.0573821),
-                                      @"lng": @(121.6149697)
-                                      },
-                                  @{
-                                      @"lat": @(25.0574089),
-                                      @"lng": @(121.6149723)
-                                      },
-                                  @{
-                                      @"lat": @(25.057412499999998),
-                                      @"lng": @(121.61490190000002)
-                                      },
-                                  
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FN-NanFangAo",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.057418000000002),
-                                      @"lng": @(121.6147664)
-                                      },
-                                  @{
-                                      @"lat": @(25.0573913),
-                                      @"lng": @(121.6147651)
-                                      },
-                                  @{
-                                      @"lat": @(25.0573901),
-                                      @"lng": @(121.6148215)
-                                      },
-                                  @{
-                                      @"lat": @(25.057416900000003),
-                                      @"lng": @(121.6148221)
-                                      },
-                                  @{
-                                      @"lat": @(25.057418000000002),
-                                      @"lng": @(121.6147664)
-                                      },
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FS-Cijin",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.057243700000004),
-                                      @"lng": @(121.6149415)
-                                      },
-                                  @{
-                                      @"lat": @(25.057215800000005),
-                                      @"lng": @(121.61493950000002)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572139),
-                                      @"lng": @(121.61499179999998)
-                                      },
-                                  @{
-                                      @"lat": @(25.057241300000005),
-                                      @"lng": @(121.6149938)
-                                      },
-                                  @{
-                                      @"lat": @(25.057243700000004),
-                                      @"lng": @(121.6149415)
-                                      },
-                                  
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FS-LianchiPond",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.0572485),
-                                      @"lng": @(121.6147323)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572218),
-                                      @"lng": @(121.61473099999999)
-                                      },
-                                  @{
-                                      @"lat": @(25.057220600000004),
-                                      @"lng": @(121.6147765)
-                                      },
-                                  @{
-                                      @"lat": @(25.057247900000004),
-                                      @"lng": @(121.6147786)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572485),
-                                      @"lng": @(121.6147323)
-                                      },
-                                  
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FS-LiyuPond",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.0572127),
-                                      @"lng": @(121.6145472)
-                                      },
-                                  @{
-                                      @"lat": @(25.057165299999998),
-                                      @"lng": @(121.6145452)
-                                      },
-                                  @{
-                                      @"lat": @(25.0571635),
-                                      @"lng": @(121.6145754)
-                                      },
-                                  @{
-                                      @"lat": @(25.057211499999998),
-                                      @"lng": @(121.61457800000001)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572127),
-                                      @"lng": @(121.6145472)
-                                      },
-                                  
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FS-LoveRiver",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.057246700000004),
-                                      @"lng": @(121.61480270000001)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572212),
-                                      @"lng": @(121.61480129999998)
-                                      },
-                                  @{
-                                      @"lat": @(25.057220000000004),
-                                      @"lng": @(121.61485229999998)
-                                      },
-                                  @{
-                                      @"lat": @(25.057246099999997),
-                                      @"lng": @(121.61485370000001)
-                                      },
-                                  @{
-                                      @"lat": @(25.057246700000004),
-                                      @"lng": @(121.61480270000001)
-                                      },
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"VC-TW-12FS-QixingTan",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.0572674),
-                                      @"lng": @(121.61433469999999)
-                                      },
-                                  @{
-                                      @"lat": @(25.057241300000005),
-                                      @"lng": @(121.61433340000002)
-                                      },
-                                  @{
-                                      @"lat": @(25.057240100000005),
-                                      @"lng": @(121.6143877)
-                                      },
-                                  @{
-                                      @"lat": @(25.057266800000004),
-                                      @"lng": @(121.61438899999999)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572674),
-                                      @"lng": @(121.61433469999999)
-                                      },
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FS-TsengwenRiver",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.0572491),
-                                      @"lng": @(121.6147329)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572504),
-                                      @"lng": @(121.61466920000001)
-                                      },
-                                  @{
-                                      @"lat": @(25.057224200000004),
-                                      @"lng": @(121.61466860000002)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572224),
-                                      @"lng": @(121.61473160000001)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572491),
-                                      @"lng": @(121.6147329)
-                                      },
-                                  ]
+                          @"boundary": @[]
                           },
                       @{
                           @"id": @"CR-TW-12FS-XiziWan",
-                          @"boundary": @[
-                                  @{
-                                      @"lat": @(25.0572066),
-                                      @"lng": @(121.6147759)
-                                      },
-                                  @{
-                                      @"lat": @(25.057159199999997),
-                                      @"lng": @(121.61477450000001)
-                                      },
-                                  @{
-                                      @"lat": @(25.057159800000004),
-                                      @"lng": @(121.61480600000002)
-                                      },
-                                  @{
-                                      @"lat": @(25.057206),
-                                      @"lng": @(121.61480609999998)
-                                      },
-                                  @{
-                                      @"lat": @(25.0572066),
-                                      @"lng": @(121.6147759)
-                                      },
-                                  ]
+                          @"boundary": @[]
                           }
                       ]
-              }
+              },
+      @(12): @{
+              @"realWidth": @(90.47277937),
+              @"realHeight": @(33.43839542),
+              @"rooms": @[]
+              },
+      @(13): @{
+              @"realWidth": @(90.17191977),
+              @"realHeight": @(49.64183381),
+              @"rooms": @[]
+              },
+      @(14): @{
+              @"realWidth": @(91.67621777),
+              @"realHeight": @(49.51289398),
+              @"rooms": @[]
+              },
+      @(15): @{
+              @"realWidth": @(90),
+              @"realHeight": @(49.64183381),
+              @"rooms": @[]
+              },
       };
 }
 @end

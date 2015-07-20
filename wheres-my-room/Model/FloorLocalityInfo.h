@@ -12,7 +12,11 @@
 @interface FloorLocalityInfo : NSObject <Floor>
 // For 1st floor, it should be 0; for 2nd floor, it should be 1.
 @property (assign, nonatomic) NSInteger order;
+@property (strong, nonatomic) NSString *mapImageName;
 
-// Array of CLLocation instances
-@property (strong, nonatomic) NSArray *boundary;
+// The real width of the map image in meters.
+@property (assign, nonatomic) double realWidthForMap;
+
+// The real height of the map image in meters.
+@property (assign, nonatomic) double realHeightForMap;
 @end

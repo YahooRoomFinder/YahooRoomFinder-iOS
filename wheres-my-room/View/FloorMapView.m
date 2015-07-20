@@ -152,6 +152,9 @@
 }
 
 - (void)updateCurrentRatioPoint {
+    if (self.mapImageView == nil) {
+        return;
+    }
     CGPoint center = self.mapImageView.center;
     //NSLog(@"Bounds: (%f, %f) width: %f, height: %f", self.mapImageView.bounds.origin.x, self.mapImageView.bounds.origin.y, self.mapImageView.bounds.size.width, self.mapImageView.bounds.size.height);
     CGFloat scale = self.absoluteScale * self.relativeScale;
