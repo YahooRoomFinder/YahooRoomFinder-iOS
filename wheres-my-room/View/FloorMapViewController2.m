@@ -11,12 +11,15 @@
 #import "FloorMapView.h"
 #import "../Control/RoomsLocalityManager.h"
 #import "Floor.h"
+#import "../KDNBeaconManager.h"
+#import "../Model/Config.h"
 
-@interface FloorMapViewController2 () <UIGestureRecognizerDelegate, FloorsViewDelegate>
+@interface FloorMapViewController2 () <UIGestureRecognizerDelegate, FloorsViewDelegate, KDNBeaconManagerDelegate>
 @property (weak, nonatomic) IBOutlet FloorMapView *floorMapView;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
 @property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchGesture;
 @property (strong, nonatomic) RoomsLocalityManager *roomsLocalityManager;
+@property (strong, nonatomic) KDNBeaconManager *beaconManager;
 
 // A dictionary mapping floor order to FloorLocalityInfo
 @property (strong, nonatomic) NSDictionary *floorsDic;
@@ -36,6 +39,35 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    
+    // Beacon
+    self.beaconManager = [[KDNBeaconManager alloc] init];
+    self.beaconManager.delegate = self;
+    [self loadBeaconItems];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    // Beacon
+    [self.beaconManager startMonitoring];
+    NSLog(@"Start monitoring for beacons");
+}
+
+- (void)loadBeaconItems {
+    Config *config = [Config sharedInstance];
+    NSArray *beaconItems = config.knownBeaconItems;
+    for (BeaconItem *beaconItem in beaconItems) {
+        [self.beaconManager addBeaconItem:beaconItem];
+    }
+    NSLog(@"Total %ld known beacons", beaconItems.count);
+    [self.beaconManager setReturnBeanconCount:beaconItems.count];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.beaconManager stopMonitoring];
+    NSLog(@"Stop monitoring for beacons");
 }
 
 - (void)doFloorSelect {
@@ -83,6 +115,29 @@
 
 - (void)floorSelected:(id<Floor>)floor {
     [self setCurrentFloor:floor.order];
+}
+
+- (void)beaconManager:(KDNBeaconManager *)beaconManager didRangeBeacons:(NSArray *)orderedBeaconItems inRegion:(CLBeaconRegion *)region
+{
+    NSLog(@"== Beacon Order ==");
+    for (BeaconItem *item in orderedBeaconItems) {
+        NSString *proximityString;
+        switch (item.proximity) {
+            case CLProximityUnknown:
+                proximityString = @"Unknown";
+                break;
+            case CLProximityFar:
+                proximityString = @"Far";
+                break;
+            case CLProximityNear:
+                proximityString = @"Near";
+                break;
+            case CLProximityImmediate:
+                proximityString = @"Immediate";
+                break;
+        }
+        NSLog(@"%@ %.2lfm %@", [item name], [item accuracy], proximityString);
+    }
 }
 
 /*

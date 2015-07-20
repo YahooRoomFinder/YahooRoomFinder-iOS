@@ -22,7 +22,6 @@
 @property (weak, nonatomic) id<KDNBeaconManagerDelegate> delegate;
 @property (assign, nonatomic) NSInteger returnBeanconCount;
 
-+ (KDNBeaconManager *) sharedInstance;
 - (void)addBeaconItem: (BeaconItem *)beaconItem;
 - (void)startMonitoring;
 - (void)stopMonitoring;

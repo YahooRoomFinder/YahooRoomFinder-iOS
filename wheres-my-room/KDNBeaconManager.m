@@ -21,19 +21,6 @@
 
 @implementation KDNBeaconManager
 
-+ (KDNBeaconManager *) sharedInstance
-{
-    static KDNBeaconManager *instance = nil;
-    static dispatch_once_t onceTocken;
-    
-    dispatch_once(&onceTocken, ^{
-        if (instance == nil) {
-            instance = [[KDNBeaconManager alloc] init];
-        }
-    });
-    return instance;
-}
-
 - (instancetype)init
 {
     self = [super init];
@@ -82,7 +69,7 @@
 
 - (void)startMonitoring
 {
-    NSLog(@"startMonitoring %ld", [self.dictBeaconRegion count]);
+    NSLog(@"Start monitoring for Beacons");
     if (self.isMonitoring == NO) {
         for (NSString *uuidString in self.dictBeaconRegion) {
 //            NSLog(@"%@", [self.dictBeaconRegion[uuidString] description]);
