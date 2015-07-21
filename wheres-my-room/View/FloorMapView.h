@@ -10,6 +10,7 @@
 
 @interface FloorMapView : UIView
 @property (assign, nonatomic) CGPoint currentRatioPoint;
+- (void)setCurrentRatioPoint:(CGPoint)ratioPoint animated:(BOOL)animated;
 - (void)pinchBeganAtPoint:(CGPoint)point;
 - (void)pinchChangedAtPoint:(CGPoint)point :(CGFloat)scale;
 - (void)pinchEndedAtPoint:(CGPoint)point;

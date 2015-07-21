@@ -27,6 +27,7 @@
 @property (assign, nonatomic) NSInteger currentFloorOrder;
 @property (strong, nonatomic) NSArray *detectedBeaconLocalityInfos;
 @property (strong, nonatomic) UIImage *displayedFloorImage;
+@property (weak, nonatomic) IBOutlet UIButton *currentLocBtn;
 
 // A dictionary mapping floor order to FloorLocalityInfo
 @property (strong, nonatomic) NSDictionary *floorsDic;
@@ -67,7 +68,20 @@ NSInteger const MAX_BEACONS = 20;
     NSLog(@"Start monitoring for beacons");
     
     // ========== DEBUG
-    
+    NSMutableArray *beacons = [NSMutableArray array];
+    BeaconItem *item1 = [[BeaconItem alloc] initWithName:@"test1" uuid:[[NSUUID alloc] initWithUUIDString:@"49107DFF-D328-4EBD-A47A-076613B658D6"] major:1.0 minor:1.0];
+    item1.accuracy = 1;
+    [beacons addObject:item1];
+    BeaconItem *item2 = [[BeaconItem alloc] initWithName:@"test2" uuid:[[NSUUID alloc] initWithUUIDString:@"C62BD0D8-432C-4DFC-909D-B678117F8965"] major:1.0 minor:1.0];
+    item2.accuracy = 1;
+    [beacons addObject:item2];
+    BeaconItem *item3 = [[BeaconItem alloc] initWithName:@"test2" uuid:[[NSUUID alloc] initWithUUIDString:@"A7500BC2-AD79-4DCA-959D-1C9FF2563FF7"] major:1.0 minor:1.0];
+    item3.accuracy = 1;
+    [beacons addObject:item3];
+    BeaconItem *item4 = [[BeaconItem alloc] initWithName:@"test2" uuid:[[NSUUID alloc] initWithUUIDString:@"2C0982E6-99AB-4D76-BBE7-012AE2F04270"] major:1.0 minor:1.0];
+    item4.accuracy = 1;
+    [beacons addObject:item4];
+    [self beaconManager:nil didRangeBeacons:beacons inRegion:nil];
 }
 
 - (void)loadBeaconItems {
@@ -136,19 +150,21 @@ NSInteger const MAX_BEACONS = 20;
     }
 }
 
-- (void)floorSelected:(id<Floor>)floor {
+- (void)setFloorSelected:(id<Floor>)floor {
     [self setDisplayedFloorOrder:floor.order];
 }
 
-- (void)currentFloorOrder:(NSInteger)curentFloorOrder {
+- (void)setCurrentFloorOrder:(NSInteger)curentFloorOrder {
     _currentFloorOrder = curentFloorOrder;
     [self displayCurrentLocation];
 }
 
 - (void)displayCurrentLocation {
     if (self.displayedFloor == nil || self.currentFloorOrder != self.displayedFloor.order) {
+        [self.floorMapView showCurrentPoint:NO];
         return;
     }
+   [self.floorMapView showCurrentPoint:YES];
     NSMutableArray *beaconsForCurrentFloor = [NSMutableArray array];
     NSMutableArray *beaconLocalitiesForCurrentFloor = [[self getCurrentFloorBeaconLocalityInfos:self.detectedBeaconLocalityInfos] mutableCopy];
     for (BeaconLocalityInfo* beaconLocalityInfo in beaconLocalitiesForCurrentFloor) {
@@ -177,9 +193,6 @@ NSInteger const MAX_BEACONS = 20;
         }
     }];
     
-    double widthScale = (double) self.displayedFloor.realWidthForMap / self.displayedFloorImage.size.width;
-    double heightScale = (double) self.displayedFloor.realHeightForMap / self.displayedFloorImage.size.height;
-    
     // Get the location and distance of the nearest 3 beacons (in meters)
     CGPoint beanconLocations[3];
     CGFloat beaconDistances[3];
@@ -187,13 +200,14 @@ NSInteger const MAX_BEACONS = 20;
         BeaconItem *beacon = beaconsForCurrentFloor[i];
         BeaconLocalityInfo *beaconLocalityInfo;
         for (BeaconLocalityInfo *beaconLocalityForCurrentFloor in beaconLocalitiesForCurrentFloor) {
-            if ([beaconLocalityForCurrentFloor.uuid isEqual:beaconLocalityInfo.uuid]) {
+            if ([beaconLocalityForCurrentFloor.uuid isEqual:beacon.uuid]) {
                 beaconLocalityInfo = beaconLocalityForCurrentFloor;
                 break;
             }
         }
         CGPoint locationOnMap = beaconLocalityInfo.locationOnMap;
-        beanconLocations[i] = CGPointMake(locationOnMap.x * widthScale, locationOnMap.y * heightScale);
+        beanconLocations[i] = CGPointMake(locationOnMap.x * self.displayedFloor.realWidthForMap,
+                                          locationOnMap.y * self.displayedFloor.realHeightForMap);
         beaconDistances[i] = beacon.accuracy;
     }
     
@@ -203,12 +217,18 @@ NSInteger const MAX_BEACONS = 20;
     NSLog(@"Current location (meters): (%lf, %lf)", currentLocation.x, currentLocation.y);
     
     // Translate the current location into ratio point
-    CGFloat currentLocX = currentLocation.x / self.displayedFloorImage.size.width;
-    CGFloat currentLocY = currentLocation.y / self.displayedFloorImage.size.height;
-    [self.floorMapView setCurrentRatioPoint:CGPointMake(currentLocX, currentLocY)];
+    CGFloat currentLocX = currentLocation.x / self.displayedFloor.realWidthForMap;
+    CGFloat currentLocY = currentLocation.y / self.displayedFloor.realHeightForMap;
+    [self.floorMapView setCurrentRatioPoint:CGPointMake(currentLocX, currentLocY) animated:YES];
 }
 
 - (CGPoint)calTrilaterationWithLocations:(CGPoint*) locations distances:(CGFloat*)distances {
+    
+    NSLog(@"Starting trilateration: (%f, %f), dis = %f, (%f, %f), dis = %f, (%f, %f), dis = %f",
+          locations[0].x, locations[0].y, distances[0],
+          locations[1].x, locations[1].y, distances[1],
+          locations[2].x, locations[2].y, distances[2]);
+    
     CGFloat x[3], y[3];
     for (int i = 0; i < 3; ++i) {
         x[i] = locations[i].x;
@@ -221,6 +241,11 @@ NSInteger const MAX_BEACONS = 20;
         x[i] -= shiftX;
         y[i] -= shiftY;
     }
+    
+    NSLog(@"After shifting: (%f, %f), (%f, %f), (%f, %f)",
+          x[0], x[0],
+          x[1], y[1],
+          x[2], y[2]);
     
     // Rotate the points around the origin so that point1 lies on the positive side of x-axis
     CGFloat r1 = sqrt(x[1] * x[1] + y[1] * y[1]);
@@ -238,10 +263,17 @@ NSInteger const MAX_BEACONS = 20;
     x[1] = r1;
     y[1] = 0.0;
     
+    NSLog(@"After rotating: (%f, %f), (%f, %f), (%f, %f)",
+          x[0], x[0],
+          x[1], y[1],
+          x[2], y[2]);
+    
     // Do trilateration
     CGFloat resultX, resultY;
     resultX = (distances[0] * distances[0] - distances[1] * distances[1] + x[1] * x[1]) / (2 * x[1]);
     resultY = (distances[0] * distances[0] - distances[2] * distances[2] - resultX * resultX + (resultX - x[2]) * (resultX - x[2]) + y[2] * y[2]) / (2 * y[2]);
+    
+    NSLog(@"After trilateration: (%f, %f)", resultX, resultY);
     
     // Rotate the result back
     tmpX = resultX;
@@ -249,15 +281,22 @@ NSInteger const MAX_BEACONS = 20;
     resultX = cosTheta * tmpX - sinTheta * tmpY;
     resultY = sinTheta * tmpX + cosTheta * tmpY;
     
+    NSLog(@"After rotating back: (%f, %f)", resultX, resultY);
+    
     // Shift the result back
     resultX += shiftX;
     resultY += shiftY;
     
+    NSLog(@"After shifting back: (%f, %f)", resultX, resultY);
     return CGPointMake(resultX, resultY);
 }
 
 - (void)beaconManager:(KDNBeaconManager *)beaconManager didRangeBeacons:(NSArray *)orderedBeaconItems inRegion:(CLBeaconRegion *)region {
+    NSLog(@"Receiving beacon update");
     for (BeaconItem *beacon in orderedBeaconItems) {
+        if (beacon.accuracy < 0) {
+            continue;
+        }
         NSUUID *uuid = beacon.uuid;
         BOOL exists = NO;
         for (int i = 0; i < self.beacons.count; ++i) {
@@ -276,6 +315,7 @@ NSInteger const MAX_BEACONS = 20;
             [self.beacons addObject:beacon];
         }
     }
+    [self updateCurrentLocation];
 }
 
 - (BeaconItem*)getDetectedBeaconForUUID:(NSUUID*)uuid {
@@ -341,6 +381,13 @@ NSInteger const MAX_BEACONS = 20;
         self.detectedBeaconLocalityInfos = beaconLocalityInfos;
         self.currentFloorOrder = [self calCurrentFloorOrder:beaconLocalityInfos];
     }];
+}
+- (IBAction)goCurrentLocation:(id)sender {
+    if(self.currentFloorOrder == INT_MAX) {
+        NSLog(@"Current location is unknown");
+        return;
+    }
+    [self setDisplayedFloorOrder:self.currentFloorOrder];
 }
 
 /*

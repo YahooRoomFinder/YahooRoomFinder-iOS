@@ -57,20 +57,28 @@
     self.beaconsLocality =
     @{
       @"49107DFF-D328-4EBD-A47A-076613B658D6": @{
-              @"floorOrder": @(12),
-              @"locationOnMap": @[@(0.23777565), @(0.74151436)] // LiYu Pond's top-left point
+              //@"floorOrder": @(11),
+              //@"locationOnMap": @[@(0.23777565), @(0.74151436)] // LiYu Pond's top-left point
+              @"floorOrder": @(13),
+              @"locationOnMap": @[@(0.3999039846), @(0.00872600349)] // Top-left of TaipeiArena + Scicence Museum
               },
       @"C62BD0D8-432C-4DFC-909D-B678117F8965": @{
-              @"floorOrder": @(12),
-              @"locationOnMap": @[@(0.40412272), @(0.70931245)] // TsengWen River's bottom-left point
+              //@"floorOrder": @(11),
+              //@"locationOnMap": @[@(0.40412272), @(0.70931245)] // TsengWen River's bottom-left point
+              @"floorOrder": @(13),
+              @"locationOnMap": @[@(0.5986557849), @(0.007853403141)] // Top-right of TaipeiArena + Scicence Museum
               },
       @"A7500BC2-AD79-4DCA-959D-1C9FF2563FF7": @{
-              @"floorOrder": @(12),
-              @"locationOnMap": @[@(0.56759348), @(0.74151436)] // XiZi Wan's top-right point
+              //@"floorOrder": @(11),
+              //@"locationOnMap": @[@(0.56759348), @(0.74151436)] // XiZi Wan's top-right point
+              @"floorOrder": @(13),
+              @"locationOnMap": @[@(0.3999039846), @(0.2434554974)] // Bottom-left of TaipeiArena + Scicence Museum
               },
       @"2C0982E6-99AB-4D76-BBE7-012AE2F04270": @{
-              @"floorOrder": @(12),
-              @"locationOnMap": @[@(0.76222435), @(0.70931245)] // Cijin's bottom-right point
+              //@"floorOrder": @(11),
+              //@"locationOnMap": @[@(0.76222435), @(0.70931245)] // Cijin's bottom-right point
+              @"floorOrder": @(13),
+              @"locationOnMap": @[@(0.5986557849), @(0.2434554974)] // Bottom-right of TaipeiArena + Scicence Museum
               },
       };
 }
