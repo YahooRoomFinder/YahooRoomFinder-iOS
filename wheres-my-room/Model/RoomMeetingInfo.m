@@ -17,7 +17,7 @@
     if (self) {
         
         self.roomId = dictionary[@"id"];
-        self.capacity = (int)dictionary[@"capacity"];
+        self.capacity = [dictionary[@"capacity"] integerValue];
         self.name = dictionary[@"display_name"];
         self.available = [dictionary[@"available"] boolValue];
         self.nextAvailableTime = dictionary[@"nex_available"];

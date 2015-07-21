@@ -13,6 +13,6 @@
 @interface YahooRoomsManager : NSObject
 + (YahooRoomsManager *) sharedInstance;
 
-- (void) getRoomMeetingInfoById:(NSString *)roomId complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion;
+- (void) getRoomMeetingInfoById:(NSString *)roomId startTs:(NSString *)startTs complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion;
 - (void) getRooms:(NSString *)parameter complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion;
 @end

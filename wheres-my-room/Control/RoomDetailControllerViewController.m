@@ -30,7 +30,7 @@
     [super viewDidLoad];
     NSLog(@"Room ID: %@", self.roomId);
     YahooRoomsManager *mgr = [YahooRoomsManager sharedInstance];
-    [mgr getRoomMeetingInfoById:self.roomId complete:^(RoomMeetingInfo *room, NSError *error) {
+    [mgr getRoomMeetingInfoById:self.roomId startTs:nil complete:^(RoomMeetingInfo *room, NSError *error) {
         if (error == nil) {
             self.roomMeetingInfo = room;
             

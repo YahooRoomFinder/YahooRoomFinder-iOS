@@ -28,7 +28,7 @@ NSString * const kRoomBaseUrl = @"http://matteflat.corp.sg3.yahoo.com/room/v0/ro
     return instance;
 }
 
-- (void) getRoomMeetingInfoById:(NSString *)roomId complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion {
+- (void) getRoomMeetingInfoById:(NSString *)roomId startTs:(NSString *)startTs complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion {
     // mock, always return Yehliu
 //    RoomMeetingInfo *result = [[RoomMeetingInfo alloc] init];
 //    result.roomId = @"CR-TW-10FN-Yehliu";
@@ -56,6 +56,10 @@ NSString * const kRoomBaseUrl = @"http://matteflat.corp.sg3.yahoo.com/room/v0/ro
     
     
     NSString *url = [kRoomBaseUrl stringByAppendingFormat:@"/%@", roomId];
+    
+    if (startTs != nil) {
+        url = [kRoomBaseUrl stringByAppendingFormat:@"/%@?startts=%@", roomId, startTs];
+    }
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -63,6 +67,7 @@ NSString * const kRoomBaseUrl = @"http://matteflat.corp.sg3.yahoo.com/room/v0/ro
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
         RoomMeetingInfo *roomMeetingInfo = [[RoomMeetingInfo alloc] initWithDictionary:dict];
+        NSLog(@"%@", roomMeetingInfo);
         completion(roomMeetingInfo, nil);
     }];
 }
