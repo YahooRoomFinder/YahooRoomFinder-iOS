@@ -40,7 +40,7 @@
     return instance;
 }
 
-- (FloorLocalityInfo*) getFloorInfoForOrder:(NSInteger)floorOrder {
+- (FloorLocalityInfo*) floorInfoForOrder:(NSInteger)floorOrder {
     NSDictionary *floorDic = [self.floors objectForKey:@(floorOrder)];
     FloorLocalityInfo* floor = [[FloorLocalityInfo alloc] init];
     floor.order = floorOrder;
@@ -55,15 +55,14 @@
     NSMutableArray *floors = [NSMutableArray array];
     for (id key in self.floors) {
         NSInteger floorOrder = [key integerValue];
-        [floors addObject:[self getFloorInfoForOrder:floorOrder]];
+        [floors addObject:[self floorInfoForOrder:floorOrder]];
     }
     completion(floors, nil);
 }
 
 - (void) floorForOrder:(NSInteger) floorOrder complete:(void(^)(FloorLocalityInfo *floor, NSError *error))completion {
-    completion([self getFloorInfoForOrder:floorOrder], nil);
+    completion([self floorInfoForOrder:floorOrder], nil);
 }
-
 
 - (void) roomsForFloorWithOrder:(NSInteger)floorOrder complete:(void(^)(NSArray *rooms, NSError *error))completion {
     NSDictionary *floorDic = self.floors[@(floorOrder)];
@@ -79,12 +78,9 @@
     for (NSDictionary *roomDic in floorDic[@"rooms"]) {
         RoomLocalityInfo* roomInfo = [[RoomLocalityInfo alloc] init];
         roomInfo.roomId = roomDic[@"id"];
-        NSMutableArray *boundary = [NSMutableArray array];
-        for (NSDictionary *boundaryPointDic in roomDic[@"boundary"]) {
-            CLLocation *loc = [[CLLocation alloc] initWithLatitude:[boundaryPointDic[@"lat"] doubleValue] longitude:[boundaryPointDic[@"lng"] doubleValue]];
-            [boundary addObject:loc];
-        }
-        roomInfo.boundary = boundary;
+        roomInfo.ratioWidth = [roomDic[@"ratioWidth"] doubleValue];
+        roomInfo.ratioHeight = [roomDic[@"ratioHeight"] doubleValue];
+        roomInfo.ratioLocation = CGPointMake([roomDic[@"ratioLocation"][0] doubleValue], [roomDic[@"ratioLocation"][1] doubleValue]);
         [rooms addObject:roomInfo];
     }
     
@@ -167,56 +163,7 @@
       @(11): @{
               @"realWidth": @(90.04297994),
               @"realHeight": @(49.51289398),
-              @"rooms": @[
-                      @{
-                          @"id": @"VC-TW-12FN-DajiaRiver",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FN-DanshuiRiver",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FN-DongshanRiver",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FN-HoneymoonBay",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FN-NanFangAo",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FS-Cijin",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FS-LianchiPond",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FS-LiyuPond",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FS-LoveRiver",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"VC-TW-12FS-QixingTan",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FS-TsengwenRiver",
-                          @"boundary": @[]
-                          },
-                      @{
-                          @"id": @"CR-TW-12FS-XiziWan",
-                          @"boundary": @[]
-                          }
-                      ]
+              @"rooms": @[]
               },
       @(12): @{
               @"realWidth": @(90.47277937),
@@ -226,7 +173,32 @@
       @(13): @{
               @"realWidth": @(90.17191977),
               @"realHeight": @(49.64183381),
-              @"rooms": @[]
+              @"rooms": @[
+                      @{
+                          @"id": @"VC-TW-14FN-Taipei101",
+                          @"ratioLocation": @[@(0.3083916084), @(0.01013941698)],
+                          @"ratioWidth": @(0.09440559441),
+                          @"ratioHeight": @(0.124207858)
+                          },
+                      @{
+                          @"id": @"CR-TW-14FN-MetroOperaHouse",
+                          @"ratioLocation": @[@(0.4615384615), @(0.2877059569)],
+                          @"ratioWidth": @(0.04195804196),
+                          @"ratioHeight": @(0.06717363752)
+                          },
+                      @{
+                          @"id": @"CR-TW-14FN-FineArtMuseum",
+                          @"ratioLocation": @[@(0.3), @(0.2877059569)],
+                          @"ratioWidth": @(0.04265734266),
+                          @"ratioHeight": @(0.06337135615)
+                          },
+                      @{
+                          @"id": @"CR-TW-14FN-LanyangMuseum",
+                          @"ratioLocation": @[@(0.2601398601), @(0.2864385298)],
+                          @"ratioWidth": @(0.04125874126),
+                          @"ratioHeight": @(0.06590621039)
+                          }
+                      ]
               },
       @(14): @{
               @"realWidth": @(91.67621777),

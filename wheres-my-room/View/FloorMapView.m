@@ -7,6 +7,7 @@
 //
 
 #import "FloorMapView.h"
+#import "../Model/RoomLocalityInfo.h"
 
 @interface FloorMapView ()
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
@@ -68,21 +69,31 @@
     self.currentRatioPoint = CGPointMake(0.5, 0.5);
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    UIImage *mapImage = self.mapImageView.image;
-    //NSLog(@"Property updated for map with key path: %@", keyPath);
+- (void)resetMapSize {
     CGRect bounds = self.mapImageView.bounds;
     self.mapImageView.center = CGPointMake(bounds.origin.x + bounds.size.width / 2.0, bounds.origin.y + bounds.size.height / 2.0);
     self.mapImageView.transform = CGAffineTransformIdentity;
-    
+    self.absoluteScale = 1.0;
+    self.relativeScale = 1.0;
+}
+
+- (void)updateInitialMapSize {
+    UIImage *mapImage = self.mapImageView.image;
+    CGRect bounds = self.mapImageView.bounds;
     CGFloat initialScale = MIN(bounds.size.width / mapImage.size.width, bounds.size.height / mapImage.size.height);
     self.initialMapSize = CGSizeMake(initialScale * mapImage.size.width, initialScale * mapImage.size.height);
-    //NSLog(@"Initial map size: (%f, %f)", self.initialMapSize.width, self.initialMapSize.height);
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    [self resetMapSize];
+    [self updateInitialMapSize];
     [self updateCurrentRatioPoint:FALSE];
 }
 
 - (void)setMapImage:(UIImage *)mapImage {
     self.mapImageView.image = mapImage;
+    [self resetMapSize];
+    [self updateInitialMapSize];
     [self resetCurrentRatioPoint];
 }
 
@@ -156,24 +167,64 @@
     [self updateCurrentRatioPoint:animated];
 }
 
+- (CGFloat)mapWidth {
+    CGFloat scale = self.absoluteScale * self.relativeScale;
+    return scale * self.initialMapSize.width;
+}
+
+- (CGFloat)mapHeight {
+    CGFloat scale = self.absoluteScale * self.relativeScale;
+    return scale * self.initialMapSize.height;
+}
+
+- (CGPoint) mapOrigin {
+    CGPoint center = self.mapImageView.center;
+    CGFloat mapWidth = [self mapWidth];
+    CGFloat mapHeight = [self mapHeight];
+    return CGPointMake(center.x - mapWidth / 2.0, center.y - mapHeight / 2);
+}
+- (CGPoint) realPointForRatioPoint:(CGPoint) ratioPoint {
+    CGFloat mapWidth = [self mapWidth];
+    CGFloat mapHeight = [self mapHeight];
+    CGPoint mapOrigin = [self mapOrigin];
+    return CGPointMake(mapOrigin.x + ratioPoint.x * mapWidth,
+                       mapOrigin.y + ratioPoint.y * mapHeight);
+}
+
 - (void)updateCurrentRatioPoint:(BOOL)animated {
     if (self.mapImageView == nil) {
         return;
     }
     void(^func)() = ^{
-        CGPoint center = self.mapImageView.center;
-        //NSLog(@"Bounds: (%f, %f) width: %f, height: %f", self.mapImageView.bounds.origin.x, self.mapImageView.bounds.origin.y, self.mapImageView.bounds.size.width, self.mapImageView.bounds.size.height);
-        CGFloat scale = self.absoluteScale * self.relativeScale;
-        CGFloat mapWidth = scale * self.initialMapSize.width;
-        CGFloat mapHeight = scale * self.initialMapSize.height;
-        CGPoint mapOrigin = CGPointMake(center.x - mapWidth / 2.0, center.y - mapHeight / 2);
-        self.currentLocImageView.center = CGPointMake(mapOrigin.x + _currentRatioPoint.x * mapWidth,
-                                                  mapOrigin.y + _currentRatioPoint.y * mapHeight);
+        self.currentLocImageView.center = [self realPointForRatioPoint:_currentRatioPoint];
     };
     if (!animated) {
         func();
     } else {
         [UIView animateWithDuration:0.1 animations:func];
+    }
+}
+- (IBAction)onMapImageTap:(UITapGestureRecognizer *)gesture {
+    if (self.roomLocalityInfos == nil ||
+        self.roomLocalityInfos.count == 0 ||
+        self.delegate == nil) {
+        return;
+    }
+    CGPoint point = [gesture locationInView:self];
+    CGPoint mapOrigin = [self mapOrigin];
+    CGFloat mapWidth = [self mapWidth];
+    CGFloat mapHeight = [self mapHeight];
+    CGPoint ratioPoint = CGPointMake((point.x - mapOrigin.x) / mapWidth,
+                        (point.y - mapOrigin.y) / mapHeight);
+    for (RoomLocalityInfo *roomLocalityInfo in self.roomLocalityInfos) {
+        CGPoint roomOrigin = roomLocalityInfo.ratioLocation;
+        if (ratioPoint.x >= roomOrigin.x &&
+            ratioPoint.x <= roomOrigin.x + roomLocalityInfo.ratioWidth &&
+            ratioPoint.y >= roomOrigin.y &&
+            ratioPoint.y <= roomOrigin.y + roomLocalityInfo.ratioHeight) {
+            [self.delegate tapOnRoom:roomLocalityInfo];
+            break;
+        }
     }
 }
 

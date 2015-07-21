@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E3197B01B5EBBAA00E0DC48 /* FavoriteRoomsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3197AF1B5EBBAA00E0DC48 /* FavoriteRoomsManager.m */; };
 		5E66EEEE1B55E97200F0F2B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EEED1B55E97200F0F2B1 /* main.m */; };
 		5E66EEF11B55E97200F0F2B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EEF01B55E97200F0F2B1 /* AppDelegate.m */; };
 		5E66EEF41B55E97200F0F2B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EEF31B55E97200F0F2B1 /* ViewController.m */; };
@@ -66,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E3197AE1B5EBBAA00E0DC48 /* FavoriteRoomsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteRoomsManager.h; path = Control/FavoriteRoomsManager.h; sourceTree = "<group>"; };
+		5E3197AF1B5EBBAA00E0DC48 /* FavoriteRoomsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteRoomsManager.m; path = Control/FavoriteRoomsManager.m; sourceTree = "<group>"; };
 		5E66EEE81B55E97200F0F2B1 /* wheres-my-room.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wheres-my-room.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E66EEEC1B55E97200F0F2B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E66EEED1B55E97200F0F2B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 		5E66EF211B57BB6D00F0F2B1 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				5E3197AE1B5EBBAA00E0DC48 /* FavoriteRoomsManager.h */,
+				5E3197AF1B5EBBAA00E0DC48 /* FavoriteRoomsManager.m */,
 				5E66EF581B5A1F1600F0F2B1 /* YahooRoomsManager.h */,
 				5E66EF591B5A1F1600F0F2B1 /* YahooRoomsManager.m */,
 				5E66EF281B57BCD600F0F2B1 /* RoomsLocalityManager.h */,
