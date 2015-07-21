@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomDetailControllerViewController">
+            <connections>
+                <outlet property="isRoomAvailableLabel" destination="oEM-03-GXK" id="w6y-By-sZK"/>
+                <outlet property="roomCapacityLabel" destination="8Wl-nk-Brs" id="fIo-W8-hYn"/>
+                <outlet property="roomIdLabel" destination="9cG-vo-JQx" id="Vd0-FC-2Lj"/>
+                <outlet property="roomNameLabel" destination="kxr-Zp-p0N" id="mG1-0u-jC7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HO4-zD-cCO">
+                    <rect key="frame" x="8" y="8" width="26.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cG-vo-JQx">
+                    <rect key="frame" x="51" y="8" width="134" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvA-CE-StI">
+                    <rect key="frame" x="8" y="36" width="55" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxr-Zp-p0N">
+                    <rect key="frame" x="79" y="36" width="163" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacity :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXM-PR-FYd">
+                    <rect key="frame" x="8" y="66" width="78" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room Capacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wl-nk-Brs">
+                    <rect key="frame" x="102" y="66" width="185.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-HQ-aik">
+                    <rect key="frame" x="8" y="95" width="78.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Meeting Room Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-03-GXK">
+                    <rect key="frame" x="102.5" y="95" width="204" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1w-dv-Ej9">
+                    <rect key="frame" x="8" y="130" width="63" height="30"/>
+                    <state key="normal" title="Meetings">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="meetingsButtonClicked:" destination="-1" eventType="touchUpInside" id="phz-uQ-Ok3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kxr-Zp-p0N" firstAttribute="leading" secondItem="MvA-CE-StI" secondAttribute="trailing" constant="16" id="1LB-ff-QVW"/>
+                <constraint firstItem="9cG-vo-JQx" firstAttribute="leading" secondItem="HO4-zD-cCO" secondAttribute="trailing" constant="17" id="AzI-VY-qgA"/>
+                <constraint firstItem="HO4-zD-cCO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="DPj-vC-Ezu"/>
+                <constraint firstItem="QXM-PR-FYd" firstAttribute="top" secondItem="kxr-Zp-p0N" secondAttribute="bottom" constant="9" id="Hrg-BP-cee"/>
+                <constraint firstItem="MvA-CE-StI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="PM9-hd-Qi1"/>
+                <constraint firstItem="zWC-HQ-aik" firstAttribute="top" secondItem="QXM-PR-FYd" secondAttribute="bottom" constant="8" id="Pec-aZ-qYx"/>
+                <constraint firstItem="oEM-03-GXK" firstAttribute="leading" secondItem="zWC-HQ-aik" secondAttribute="trailing" constant="16" id="Ug2-Fe-sC0"/>
+                <constraint firstItem="j1w-dv-Ej9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Wsf-Y4-Ifj"/>
+                <constraint firstItem="zWC-HQ-aik" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Zr0-dN-DCk"/>
+                <constraint firstItem="HO4-zD-cCO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="eSb-uk-Xgc"/>
+                <constraint firstItem="MvA-CE-StI" firstAttribute="top" secondItem="9cG-vo-JQx" secondAttribute="bottom" constant="8" id="hyY-ey-poW"/>
+                <constraint firstItem="8Wl-nk-Brs" firstAttribute="centerY" secondItem="QXM-PR-FYd" secondAttribute="centerY" id="iMj-Yr-iRJ"/>
+                <constraint firstItem="j1w-dv-Ej9" firstAttribute="top" secondItem="zWC-HQ-aik" secondAttribute="bottom" constant="14.5" id="jh7-QH-gqg"/>
+                <constraint firstItem="8Wl-nk-Brs" firstAttribute="leading" secondItem="QXM-PR-FYd" secondAttribute="trailing" constant="16" id="mJK-1m-GbT"/>
+                <constraint firstItem="kxr-Zp-p0N" firstAttribute="centerY" secondItem="MvA-CE-StI" secondAttribute="centerY" id="p48-0f-CbI"/>
+                <constraint firstItem="HO4-zD-cCO" firstAttribute="centerY" secondItem="9cG-vo-JQx" secondAttribute="centerY" id="rpi-cs-BCi"/>
+                <constraint firstItem="QXM-PR-FYd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="wKP-Ib-Lm2"/>
+                <constraint firstItem="zWC-HQ-aik" firstAttribute="centerY" secondItem="oEM-03-GXK" secondAttribute="centerY" id="wKn-Zj-aeD"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+        </view>
+    </objects>
+</document>

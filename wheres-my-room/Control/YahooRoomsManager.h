@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RoomMeetingInfo.h"
 
 @interface YahooRoomsManager : NSObject
 + (YahooRoomsManager *) sharedInstance;
+
+- (void) getRoomMeetingInfoById:(NSString *)roomId complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion;
 @end
