@@ -41,6 +41,15 @@
 		7BFB74A41B5DD631004ED75F /* RoomMeetingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BFB74A21B5DD631004ED75F /* RoomMeetingCell.xib */; };
 		D43698EC1B5BD73F00E9D094 /* BeaconItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D43698E91B5BD73F00E9D094 /* BeaconItem.m */; };
 		D43698ED1B5BD73F00E9D094 /* KDNBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D43698EB1B5BD73F00E9D094 /* KDNBeaconManager.m */; };
+		D4ABE1311B5EB14900C05B0F /* ingredients_list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE1281B5EB14900C05B0F /* ingredients_list@3x.png */; };
+		D4ABE1321B5EB14900C05B0F /* ingredients_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE1291B5EB14900C05B0F /* ingredients_list@2x.png */; };
+		D4ABE1331B5EB14900C05B0F /* ingredients_list.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE12A1B5EB14900C05B0F /* ingredients_list.png */; };
+		D4ABE1341B5EB14900C05B0F /* point_objects.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE12B1B5EB14900C05B0F /* point_objects.png */; };
+		D4ABE1351B5EB14900C05B0F /* point_objects@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE12C1B5EB14900C05B0F /* point_objects@3x.png */; };
+		D4ABE1361B5EB14900C05B0F /* point_objects@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE12D1B5EB14900C05B0F /* point_objects@2x.png */; };
+		D4ABE1371B5EB14900C05B0F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE12E1B5EB14900C05B0F /* star.png */; };
+		D4ABE1381B5EB14900C05B0F /* star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE12F1B5EB14900C05B0F /* star@3x.png */; };
+		D4ABE1391B5EB14900C05B0F /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE1301B5EB14900C05B0F /* star@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +124,15 @@
 		D43698E91B5BD73F00E9D094 /* BeaconItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconItem.m; sourceTree = "<group>"; };
 		D43698EA1B5BD73F00E9D094 /* KDNBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDNBeaconManager.h; sourceTree = "<group>"; };
 		D43698EB1B5BD73F00E9D094 /* KDNBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDNBeaconManager.m; sourceTree = "<group>"; };
+		D4ABE1281B5EB14900C05B0F /* ingredients_list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ingredients_list@3x.png"; sourceTree = "<group>"; };
+		D4ABE1291B5EB14900C05B0F /* ingredients_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ingredients_list@2x.png"; sourceTree = "<group>"; };
+		D4ABE12A1B5EB14900C05B0F /* ingredients_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ingredients_list.png; sourceTree = "<group>"; };
+		D4ABE12B1B5EB14900C05B0F /* point_objects.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_objects.png; sourceTree = "<group>"; };
+		D4ABE12C1B5EB14900C05B0F /* point_objects@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point_objects@3x.png"; sourceTree = "<group>"; };
+		D4ABE12D1B5EB14900C05B0F /* point_objects@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point_objects@2x.png"; sourceTree = "<group>"; };
+		D4ABE12E1B5EB14900C05B0F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		D4ABE12F1B5EB14900C05B0F /* star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@3x.png"; sourceTree = "<group>"; };
+		D4ABE1301B5EB14900C05B0F /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +197,15 @@
 		5E66EEEB1B55E97200F0F2B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4ABE1281B5EB14900C05B0F /* ingredients_list@3x.png */,
+				D4ABE1291B5EB14900C05B0F /* ingredients_list@2x.png */,
+				D4ABE12A1B5EB14900C05B0F /* ingredients_list.png */,
+				D4ABE12B1B5EB14900C05B0F /* point_objects.png */,
+				D4ABE12C1B5EB14900C05B0F /* point_objects@3x.png */,
+				D4ABE12D1B5EB14900C05B0F /* point_objects@2x.png */,
+				D4ABE12E1B5EB14900C05B0F /* star.png */,
+				D4ABE12F1B5EB14900C05B0F /* star@3x.png */,
+				D4ABE1301B5EB14900C05B0F /* star@2x.png */,
 				5E66EEEC1B55E97200F0F2B1 /* Info.plist */,
 				5E66EEED1B55E97200F0F2B1 /* main.m */,
 			);
@@ -353,13 +380,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E66EEFC1B55E97200F0F2B1 /* LaunchScreen.xib in Resources */,
+				D4ABE1351B5EB14900C05B0F /* point_objects@3x.png in Resources */,
+				D4ABE1321B5EB14900C05B0F /* ingredients_list@2x.png in Resources */,
+				D4ABE1331B5EB14900C05B0F /* ingredients_list.png in Resources */,
 				5E66EF7B1B5BB49200F0F2B1 /* FloorMapViewController2.xib in Resources */,
+				D4ABE1371B5EB14900C05B0F /* star.png in Resources */,
+				D4ABE1391B5EB14900C05B0F /* star@2x.png in Resources */,
 				7BFB749D1B5DD5CD004ED75F /* RoomDetailControllerViewController.xib in Resources */,
 				5E66EF381B57C21600F0F2B1 /* FloorsViewController.xib in Resources */,
 				5E66EF761B5BADA900F0F2B1 /* FloorMapView.xib in Resources */,
+				D4ABE1341B5EB14900C05B0F /* point_objects.png in Resources */,
 				5E66EEF91B55E97200F0F2B1 /* Images.xcassets in Resources */,
 				7BFB749F1B5DD5CD004ED75F /* RoomMettingsViewController.xib in Resources */,
 				5E66EF481B57C96400F0F2B1 /* FloorCell.xib in Resources */,
+				D4ABE1381B5EB14900C05B0F /* star@3x.png in Resources */,
+				D4ABE1361B5EB14900C05B0F /* point_objects@2x.png in Resources */,
+				D4ABE1311B5EB14900C05B0F /* ingredients_list@3x.png in Resources */,
 				7BFB74A41B5DD631004ED75F /* RoomMeetingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

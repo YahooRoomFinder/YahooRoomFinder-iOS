@@ -37,6 +37,13 @@
 
 NSInteger const MAX_BEACONS = 20;
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self.title = @"Map";
+    [self.tabBarItem setImage:[UIImage imageNamed:@"point_objects"]];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.beacons = [NSMutableArray array];

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "View/FloorsViewController.h"
 #import "View/FloorMapViewController2.h"
+#import "Control/RoomDetailControllerViewController.h"
 #import "Control/Utils.h"
 #import "KDNBeaconManager.h"
 
@@ -21,10 +22,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    //self.window.rootViewController = [[MapViewController alloc] init];
-    //self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorsViewController alloc] init]];
-    //self.window.rootViewController = [[FloorMapViewController alloc] init];
-    self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]];
+//    self.window.rootViewController = [[MapViewController alloc] init];
+//    self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorsViewController alloc] init]];
+//    self.window.rootViewController = [[FloorMapViewController alloc] init];
+//    self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]];
+    self.tabBarController = [[UITabBarController alloc] init];
+    [self.tabBarController setViewControllers:@[
+                                                [Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]],
+                                                [Utils embedNavBarForViewController:[[FloorsViewController alloc] init]],
+                                                [Utils embedNavBarForViewController:[[RoomDetailControllerViewController alloc] init]]                                                ]];
+    [self.window setRootViewController:self.tabBarController];
+    
     [self.window makeKeyAndVisible];
 
     // notification
