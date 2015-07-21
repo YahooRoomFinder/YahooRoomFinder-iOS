@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "RoomMeetingInfo.h"
+#import "Room.h"
 
 @interface YahooRoomsManager : NSObject
 + (YahooRoomsManager *) sharedInstance;
 
 - (void) getRoomMeetingInfoById:(NSString *)roomId complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion;
+- (void) getRooms:(NSString *)parameter complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion;
 @end
