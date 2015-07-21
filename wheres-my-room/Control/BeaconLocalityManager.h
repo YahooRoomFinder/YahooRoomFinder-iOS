@@ -11,5 +11,5 @@
 
 @interface BeaconLocalityManager : NSObject
 + (BeaconLocalityManager *) sharedInstance;
-- (void)localityInfoForBeacon:(NSUUID*) uuid complete:(void(^)(BeaconLocalityInfo *beaconLocalityInfo, NSError *error))completion;
+- (void)localityInfoForBeacons:(NSArray*) uuid complete:(void(^)(NSArray *beaconLocalityInfos, NSError *error))completion;
 @end
