@@ -9,6 +9,7 @@
 #import "RoomDetailControllerViewController.h"
 #import "YahooRoomsManager.h"
 #import "RoomMettingsViewController.h"
+#import "FavoriteRoomsManager.h"
 
 @interface RoomDetailControllerViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *roomIdLabel;
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *roomCapacityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *isRoomAvailableLabel;
 - (IBAction)meetingsButtonClicked:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *favoritedButton;
+- (IBAction)favoriteButtonClicked:(UIButton *)sender;
 
 @property (strong, nonatomic) RoomMeetingInfo *roomMeetingInfo;
 
@@ -36,9 +39,10 @@
             self.roomNameLabel.text = room.name;
             self.roomCapacityLabel.text = [NSString stringWithFormat:@"%ld", (long)room.capacity];
             self.isRoomAvailableLabel.text = (room.available ? @"YES" : @"NO");
-
-            self.navigationController.title = room.name;
             
+            FavoriteRoomsManager *favoriteRoomsMgr = [FavoriteRoomsManager sharedInstance];
+            self.favoritedButton.highlighted = [favoriteRoomsMgr isFavoriteRoom:room.roomId];
+
             self.navigationItem.title = room.name;
         }
     }];    
@@ -60,7 +64,20 @@
 */
 
 - (IBAction)meetingsButtonClicked:(UIButton *)sender {
-    RoomDetailControllerViewController *controller = [[RoomMettingsViewController alloc] initWithMeetings:self.roomMeetingInfo.meetings];
+    RoomMettingsViewController *controller = [[RoomMettingsViewController alloc] initWithMeetings:self.roomMeetingInfo.meetings];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)favoriteButtonClicked:(UIButton *)sender {
+    FavoriteRoomsManager *favoriteRoomsMgr = [FavoriteRoomsManager sharedInstance];
+
+    if ([favoriteRoomsMgr isFavoriteRoom:self.roomMeetingInfo.roomId]) {
+        [favoriteRoomsMgr removeFavoriteRoom:self.roomMeetingInfo.roomId];
+    } else {
+        [favoriteRoomsMgr addFavoriteRoom:self.roomMeetingInfo.roomId];
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.favoritedButton setHighlighted:[favoriteRoomsMgr isFavoriteRoom:self.roomMeetingInfo.roomId]];
+    });
 }
 @end
