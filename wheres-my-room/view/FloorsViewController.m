@@ -24,6 +24,13 @@
 
 NSString * const FLOOR_CELL = @"FloorCell";
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self.title = @"favorite";
+    [self.tabBarItem setImage:[UIImage imageNamed:@"star"]];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Floors";

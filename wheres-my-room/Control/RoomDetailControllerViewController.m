@@ -23,6 +23,13 @@
 
 @implementation RoomDetailControllerViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self.title = @"Detail";
+    [self.tabBarItem setImage:[UIImage imageNamed:@"ingredients_list"]];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -37,8 +44,7 @@
             self.roomCapacityLabel.text = [NSString stringWithFormat:@"%ld", (long)room.capacity];
             self.isRoomAvailableLabel.text = (room.available ? @"YES" : @"NO");
 
-            self.navigationController.title = room.name;
-            
+            self.navigationController.title = room.name;            
             self.navigationItem.title = room.name;
         }
     }];    
