@@ -75,7 +75,7 @@ NSString * const FLOOR_CELL = @"FloorCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.delegate != nil) {
         id<Floor> floor = self.floors[indexPath.row];
-        [self.delegate floorSelected:floor];
+        [self.delegate setFloorSelected:floor];
     }
     //[self dismissViewControllerAnimated:YES completion:nil];
     [self.navigationController popViewControllerAnimated:YES];

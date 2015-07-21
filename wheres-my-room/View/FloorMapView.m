@@ -78,7 +78,7 @@
     CGFloat initialScale = MIN(bounds.size.width / mapImage.size.width, bounds.size.height / mapImage.size.height);
     self.initialMapSize = CGSizeMake(initialScale * mapImage.size.width, initialScale * mapImage.size.height);
     //NSLog(@"Initial map size: (%f, %f)", self.initialMapSize.width, self.initialMapSize.height);
-    [self updateCurrentRatioPoint];
+    [self updateCurrentRatioPoint:FALSE];
 }
 
 - (void)setMapImage:(UIImage *)mapImage {
@@ -110,7 +110,7 @@
     self.relativeScale = scale;
     CGFloat nowScale = self.absoluteScale * scale;
     self.mapImageView.transform = CGAffineTransformMakeScale(nowScale, nowScale);
-    [self updateCurrentRatioPoint];
+    [self updateCurrentRatioPoint:FALSE];
 }
 
 - (void)pinchEndedAtPoint:(CGPoint)point {
@@ -120,7 +120,7 @@
         self.absoluteScale = 1.0;
         [UIView animateWithDuration:0.2 animations:^{
             self.mapImageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-            [self updateCurrentRatioPoint];
+            [self updateCurrentRatioPoint:FALSE];
         } completion:^(BOOL finished) {
             self.absoluteScale = 1.0;
         }];
@@ -136,7 +136,7 @@
     CGPoint newCenter = CGPointMake(point.x - self.lastPanPoint.x + center.x, point.y - self.lastPanPoint.y + center.y);
     self.mapImageView.center = newCenter;
     self.lastPanPoint = point;
-    [self updateCurrentRatioPoint];
+    [self updateCurrentRatioPoint:FALSE];
 }
 
 - (void)panEndedAtPoint:(CGPoint) point {
@@ -147,23 +147,34 @@
     self.currentLocImageView.hidden = !enable;
 }
 
-- (void)setCurrentRatioPoint:(CGPoint)ratioPoint{
-    _currentRatioPoint = ratioPoint;
-    [self updateCurrentRatioPoint];
+- (void)setCurrentRatioPoint:(CGPoint)ratioPoint {
+    [self setCurrentRatioPoint:ratioPoint animated:FALSE];
 }
 
-- (void)updateCurrentRatioPoint {
+- (void)setCurrentRatioPoint:(CGPoint)ratioPoint animated:(BOOL)animated {
+    _currentRatioPoint = ratioPoint;
+    [self updateCurrentRatioPoint:animated];
+}
+
+- (void)updateCurrentRatioPoint:(BOOL)animated {
     if (self.mapImageView == nil) {
         return;
     }
-    CGPoint center = self.mapImageView.center;
-    //NSLog(@"Bounds: (%f, %f) width: %f, height: %f", self.mapImageView.bounds.origin.x, self.mapImageView.bounds.origin.y, self.mapImageView.bounds.size.width, self.mapImageView.bounds.size.height);
-    CGFloat scale = self.absoluteScale * self.relativeScale;
-    CGFloat mapWidth = scale * self.initialMapSize.width;
-    CGFloat mapHeight = scale * self.initialMapSize.height;
-    CGPoint mapOrigin = CGPointMake(center.x - mapWidth / 2.0, center.y - mapHeight / 2);
-    self.currentLocImageView.center = CGPointMake(mapOrigin.x + _currentRatioPoint.x * mapWidth,
+    void(^func)() = ^{
+        CGPoint center = self.mapImageView.center;
+        //NSLog(@"Bounds: (%f, %f) width: %f, height: %f", self.mapImageView.bounds.origin.x, self.mapImageView.bounds.origin.y, self.mapImageView.bounds.size.width, self.mapImageView.bounds.size.height);
+        CGFloat scale = self.absoluteScale * self.relativeScale;
+        CGFloat mapWidth = scale * self.initialMapSize.width;
+        CGFloat mapHeight = scale * self.initialMapSize.height;
+        CGPoint mapOrigin = CGPointMake(center.x - mapWidth / 2.0, center.y - mapHeight / 2);
+        self.currentLocImageView.center = CGPointMake(mapOrigin.x + _currentRatioPoint.x * mapWidth,
                                                   mapOrigin.y + _currentRatioPoint.y * mapHeight);
+    };
+    if (!animated) {
+        func();
+    } else {
+        [UIView animateWithDuration:0.1 animations:func];
+    }
 }
 
 /*

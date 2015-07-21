@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FloorMapViewController2">
             <connections>
+                <outlet property="currentLocBtn" destination="ynu-db-Try" id="P8I-Cd-nn8"/>
                 <outlet property="floorMapView" destination="dHd-x1-RJB" id="NNL-Ou-aMk"/>
                 <outlet property="panGesture" destination="uss-7I-9hJ" id="Dpc-Tq-NVO"/>
                 <outlet property="pinchGesture" destination="hcf-Rh-daz" id="cI0-Vk-ddK"/>
@@ -29,16 +30,55 @@
                         <outletCollection property="gestureRecognizers" destination="uss-7I-9hJ" appends="YES" id="8JE-7o-5sQ"/>
                     </connections>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynu-db-Try">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="5Cw-Pi-imm"/>
+                        <constraint firstAttribute="width" constant="32" id="bsk-Ps-oUT"/>
+                    </constraints>
+                    <state key="normal" image="gps-fixed">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="5Cw-Pi-imm"/>
+                            <exclude reference="bsk-Ps-oUT"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="5Cw-Pi-imm"/>
+                            <include reference="bsk-Ps-oUT"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="goCurrentLocation:" destination="-1" eventType="touchUpInside" id="uqU-oY-Tcq"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ynu-db-Try" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="2" id="RuO-uL-JSq"/>
+                <constraint firstAttribute="trailing" secondItem="ynu-db-Try" secondAttribute="trailing" constant="2" id="hDg-PY-TET"/>
+            </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="dHd-x1-RJB"/>
+                    <exclude reference="ynu-db-Try"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="RuO-uL-JSq"/>
+                    <exclude reference="hDg-PY-TET"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
                     <include reference="dHd-x1-RJB"/>
+                    <include reference="ynu-db-Try"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="RuO-uL-JSq"/>
+                    <include reference="hDg-PY-TET"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="216" y="359"/>
@@ -54,4 +94,7 @@
             </connections>
         </panGestureRecognizer>
     </objects>
+    <resources>
+        <image name="gps-fixed" width="32" height="32"/>
+    </resources>
 </document>
