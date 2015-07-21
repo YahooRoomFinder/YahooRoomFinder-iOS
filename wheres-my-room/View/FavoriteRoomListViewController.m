@@ -19,6 +19,11 @@
 
 @implementation FavoriteRoomListViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    [self.tabBarItem setImage:[UIImage imageNamed:@"star"]];
+    return self;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
