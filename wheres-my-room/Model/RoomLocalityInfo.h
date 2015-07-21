@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CGGeometry.h>
 
 @interface RoomLocalityInfo : NSObject
 @property (strong, nonatomic) NSString *roomId;
-
-// Array of CLLocation instances
-@property (strong, nonatomic) NSArray *boundary;
+@property (assign, nonatomic) CGPoint ratioLocation;
+@property (assign, nonatomic) double ratioWidth;
+@property (assign, nonatomic) double ratioHeight;
 @end

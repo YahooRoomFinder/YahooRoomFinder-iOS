@@ -28,8 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
+    NSLog(@"Room ID: %@", self.roomId);
     YahooRoomsManager *mgr = [YahooRoomsManager sharedInstance];
     [mgr getRoomMeetingInfoById:self.roomId complete:^(RoomMeetingInfo *room, NSError *error) {
         if (error == nil) {
