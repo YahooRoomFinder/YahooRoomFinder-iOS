@@ -65,7 +65,6 @@ NSInteger const MAX_BEACONS = 20;
 
     // Beacon
     [self.beaconManager startMonitoring];
-    NSLog(@"Start monitoring for beacons");
     
     // ========== DEBUG
     NSMutableArray *beacons = [NSMutableArray array];
