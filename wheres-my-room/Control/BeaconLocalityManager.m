@@ -35,24 +35,22 @@
     return self;
 }
 
-- (void)localityInfoForBeacon:(NSUUID*) uuid complete:(void(^)(BeaconLocalityInfo *beaconLocalityInfo, NSError *error))completion {
-    NSString* uuidStr = [uuid UUIDString];
-    NSDictionary *beaconDic = self.beaconsLocality[uuidStr];
-    if (beaconDic == nil) {
-        NSError *err = [[NSError alloc] initWithDomain:@"BeaconLocalityManagerDomain" code:1 userInfo:
-                        @{
-                          NSLocalizedDescriptionKey: [NSString stringWithFormat: @"Beacon UUID not found: %@", uuidStr]
-                          }];
-
-        completion(nil, err);
-        return;
+- (void)localityInfoForBeacons:(NSArray*) uuids complete:(void(^)(NSArray *beaconLocalityInfos, NSError *error))completion {
+    NSMutableArray *beaconLocalityInfos = [NSMutableArray array];
+    for (NSUUID *uuid in uuids) {
+        NSString* uuidStr = [uuid UUIDString];
+        NSDictionary *beaconDic = self.beaconsLocality[uuidStr];
+        if (beaconDic == nil) {
+            continue;
+        }
+        BeaconLocalityInfo *beaconLocalityInfo = [[BeaconLocalityInfo alloc] init];
+        beaconLocalityInfo.uuid = uuid;
+        NSArray *locationOnMap = beaconDic[@"locationOnMap"];
+        beaconLocalityInfo.locationOnMap = CGPointMake([locationOnMap[0] doubleValue], [locationOnMap[1] doubleValue]);
+        beaconLocalityInfo.floorOrder = [beaconDic[@"floorOrder"] integerValue];
+        [beaconLocalityInfos addObject:beaconLocalityInfo];
     }
-    BeaconLocalityInfo *beaconLocalityInfo = [[BeaconLocalityInfo alloc] init];
-    beaconLocalityInfo.uuid = uuid;
-    NSArray *locationOnMap = beaconDic[@"locationOnMap"];
-    beaconLocalityInfo.locationOnMap = CGPointMake([locationOnMap[0] doubleValue], [locationOnMap[1] doubleValue]);
-    beaconLocalityInfo.floorOrder = [beaconDic[@"floorOrder"] integerValue];
-    completion(beaconLocalityInfo, nil);
+    completion(beaconLocalityInfos, nil);
 }
 
 - (void)initBeaconsLocality {
