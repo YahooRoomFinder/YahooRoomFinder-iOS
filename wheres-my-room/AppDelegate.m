@@ -35,7 +35,9 @@
     [self.window setRootViewController:self.tabBarController];
     
     [self.window makeKeyAndVisible];
-
+    [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTranslucent:NO];
+    
     // notification
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:
@@ -44,7 +46,7 @@
           categories:nil
           ]
          ];
-    }    
+    }
     return YES;
 }
 
