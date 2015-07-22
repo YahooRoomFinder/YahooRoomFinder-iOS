@@ -18,4 +18,7 @@
 // Array of Meeting's
 @property (strong, nonatomic) NSArray *meetings;
 @property (strong, nonatomic) NSDate *nextAvailableTime;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
 @end
