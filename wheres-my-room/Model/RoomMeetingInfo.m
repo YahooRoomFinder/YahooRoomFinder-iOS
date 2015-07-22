@@ -20,7 +20,7 @@
         self.capacity = [dictionary[@"capacity"] integerValue];
         self.name = dictionary[@"display_name"];
         self.available = [dictionary[@"available"] boolValue];
-        self.nextAvailableTime = dictionary[@"nex_available"];
+        self.nextAvailableTime = dictionary[@"next_available"];
         self.meetings = [Meeting  meetingWithArray:dictionary[@"meetings"]];
     }
     return self;
