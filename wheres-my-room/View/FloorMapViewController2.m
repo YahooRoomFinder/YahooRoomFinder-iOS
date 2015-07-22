@@ -14,8 +14,9 @@
 #import "Floor.h"
 #import "../KDNBeaconManager.h"
 #import "../Model/Config.h"
+#import "../Control/RoomDetailControllerViewController.h"
 
-@interface FloorMapViewController2 () <UIGestureRecognizerDelegate, FloorsViewDelegate, KDNBeaconManagerDelegate>
+@interface FloorMapViewController2 () <UIGestureRecognizerDelegate, FloorsViewDelegate, KDNBeaconManagerDelegate, FloorMapViewDelegate>
 @property (weak, nonatomic) IBOutlet FloorMapView *floorMapView;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
 @property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchGesture;
@@ -48,6 +49,7 @@ NSInteger const MAX_BEACONS = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.beacons = [NSMutableArray array];
+    self.floorMapView.delegate = self;
     self.roomsLocalityManager = [RoomsLocalityManager sharedInstance];
     self.beaconLocalityManager = [BeaconLocalityManager sharedInstance];
     self.currentFloorOrder = INT_MAX;
@@ -122,7 +124,13 @@ NSInteger const MAX_BEACONS = 20;
 }
 
 - (void)setDisplayedFloor:(FloorLocalityInfo *)displayedFloor {
+    if (_displayedFloor == displayedFloor) {
+        return;
+    }
     _displayedFloor = displayedFloor;
+    [self.roomsLocalityManager roomsForFloorWithOrder:displayedFloor.order complete:^(NSArray *rooms, NSError *error) {
+        self.floorMapView.roomLocalityInfos = rooms;
+    }];
     [self displayCurrentLocation];
 }
 
@@ -394,6 +402,13 @@ NSInteger const MAX_BEACONS = 20;
         return;
     }
     [self setDisplayedFloorOrder:self.currentFloorOrder];
+}
+
+- (void)tapOnRoom:(RoomLocalityInfo *)room {
+    NSString *roomId = room.roomId;
+    RoomDetailControllerViewController *vc = [[RoomDetailControllerViewController alloc] init];
+    vc.roomId = roomId;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

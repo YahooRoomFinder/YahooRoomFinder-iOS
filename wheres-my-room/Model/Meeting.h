@@ -14,4 +14,10 @@
 @property (strong, nonatomic) NSString *subject;
 @property (strong, nonatomic) NSDate *startTime;
 @property (strong, nonatomic) NSDate *endTime;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
++ (NSArray * ) meetingWithArray:(NSArray * ) array;
+
+
 @end

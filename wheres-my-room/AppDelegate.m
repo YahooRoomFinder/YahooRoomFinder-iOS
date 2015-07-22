@@ -12,6 +12,7 @@
 #import "Control/RoomDetailControllerViewController.h"
 #import "Control/Utils.h"
 #import "KDNBeaconManager.h"
+#import "FavoriteRoomListViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,7 +30,7 @@
     self.tabBarController = [[UITabBarController alloc] init];
     [self.tabBarController setViewControllers:@[
                                                 [Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]],
-                                                [Utils embedNavBarForViewController:[[FloorsViewController alloc] init]],
+                                                [Utils embedNavBarForViewController:[[FavoriteRoomListViewController alloc] init]],
                                                 [Utils embedNavBarForViewController:[[RoomDetailControllerViewController alloc] init]]                                                ]];
     [self.window setRootViewController:self.tabBarController];
     

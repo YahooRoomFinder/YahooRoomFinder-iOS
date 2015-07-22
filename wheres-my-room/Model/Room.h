@@ -12,4 +12,9 @@
 @interface Room : NSObject
 @property (strong, nonatomic) NSString *roomId;
 @property (strong, nonatomic) NSString *name;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
++ (NSArray * ) roomWithArray:(NSArray * ) array;
+
 @end

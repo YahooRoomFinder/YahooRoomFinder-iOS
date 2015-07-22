@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomDetailControllerViewController">
             <connections>
+                <outlet property="favoritedButton" destination="8Yr-Bm-Eq0" id="9Vu-p4-E7i"/>
                 <outlet property="isRoomAvailableLabel" destination="oEM-03-GXK" id="w6y-By-sZK"/>
                 <outlet property="roomCapacityLabel" destination="8Wl-nk-Brs" id="fIo-W8-hYn"/>
                 <outlet property="roomIdLabel" destination="9cG-vo-JQx" id="Vd0-FC-2Lj"/>
@@ -19,60 +20,70 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HO4-zD-cCO">
-                    <rect key="frame" x="8" y="8" width="26.5" height="20.5"/>
+                    <rect key="frame" x="8" y="80" width="27" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cG-vo-JQx">
-                    <rect key="frame" x="51" y="8" width="134" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meeting Room ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cG-vo-JQx">
+                    <rect key="frame" x="51" y="80" width="134" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvA-CE-StI">
-                    <rect key="frame" x="8" y="36" width="55" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvA-CE-StI">
+                    <rect key="frame" x="8" y="108" width="55" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxr-Zp-p0N">
-                    <rect key="frame" x="79" y="36" width="163" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meeting Room Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxr-Zp-p0N">
+                    <rect key="frame" x="79" y="108" width="163" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacity :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXM-PR-FYd">
-                    <rect key="frame" x="8" y="66" width="78" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Capacity :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXM-PR-FYd">
+                    <rect key="frame" x="8" y="138" width="78" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room Capacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wl-nk-Brs">
-                    <rect key="frame" x="102" y="66" width="185.5" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meeting Room Capacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wl-nk-Brs">
+                    <rect key="frame" x="102" y="138" width="186" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-HQ-aik">
-                    <rect key="frame" x="8" y="95" width="78.5" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Available :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-HQ-aik">
+                    <rect key="frame" x="8" y="167" width="79" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Meeting Room Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-03-GXK">
-                    <rect key="frame" x="102.5" y="95" width="204" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Is Meeting Room Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-03-GXK">
+                    <rect key="frame" x="102" y="167" width="204" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1w-dv-Ej9">
-                    <rect key="frame" x="8" y="130" width="63" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1w-dv-Ej9">
+                    <rect key="frame" x="8" y="202" width="63" height="30"/>
                     <state key="normal" title="Meetings">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="meetingsButtonClicked:" destination="-1" eventType="touchUpInside" id="phz-uQ-Ok3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-Bm-Eq0">
+                    <rect key="frame" x="564" y="80" width="16" height="22"/>
+                    <state key="normal" image="tweet_favorite_off">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="tweet_favorite_on"/>
+                    <connections>
+                        <action selector="favoriteButtonClicked:" destination="-1" eventType="touchUpInside" id="ZHy-8q-uTA"/>
                     </connections>
                 </button>
             </subviews>
@@ -87,17 +98,23 @@
                 <constraint firstItem="oEM-03-GXK" firstAttribute="leading" secondItem="zWC-HQ-aik" secondAttribute="trailing" constant="16" id="Ug2-Fe-sC0"/>
                 <constraint firstItem="j1w-dv-Ej9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Wsf-Y4-Ifj"/>
                 <constraint firstItem="zWC-HQ-aik" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Zr0-dN-DCk"/>
-                <constraint firstItem="HO4-zD-cCO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="eSb-uk-Xgc"/>
+                <constraint firstItem="HO4-zD-cCO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="eSb-uk-Xgc"/>
                 <constraint firstItem="MvA-CE-StI" firstAttribute="top" secondItem="9cG-vo-JQx" secondAttribute="bottom" constant="8" id="hyY-ey-poW"/>
                 <constraint firstItem="8Wl-nk-Brs" firstAttribute="centerY" secondItem="QXM-PR-FYd" secondAttribute="centerY" id="iMj-Yr-iRJ"/>
                 <constraint firstItem="j1w-dv-Ej9" firstAttribute="top" secondItem="zWC-HQ-aik" secondAttribute="bottom" constant="14.5" id="jh7-QH-gqg"/>
                 <constraint firstItem="8Wl-nk-Brs" firstAttribute="leading" secondItem="QXM-PR-FYd" secondAttribute="trailing" constant="16" id="mJK-1m-GbT"/>
+                <constraint firstItem="HO4-zD-cCO" firstAttribute="centerY" secondItem="8Yr-Bm-Eq0" secondAttribute="centerY" id="mYq-5j-QH5"/>
                 <constraint firstItem="kxr-Zp-p0N" firstAttribute="centerY" secondItem="MvA-CE-StI" secondAttribute="centerY" id="p48-0f-CbI"/>
                 <constraint firstItem="HO4-zD-cCO" firstAttribute="centerY" secondItem="9cG-vo-JQx" secondAttribute="centerY" id="rpi-cs-BCi"/>
+                <constraint firstAttribute="trailing" secondItem="8Yr-Bm-Eq0" secondAttribute="trailing" constant="20" id="tGL-hc-fxQ"/>
                 <constraint firstItem="QXM-PR-FYd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="wKP-Ib-Lm2"/>
                 <constraint firstItem="zWC-HQ-aik" firstAttribute="centerY" secondItem="oEM-03-GXK" secondAttribute="centerY" id="wKn-Zj-aeD"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="tweet_favorite_off" width="16" height="16"/>
+        <image name="tweet_favorite_on" width="16" height="16"/>
+    </resources>
 </document>
