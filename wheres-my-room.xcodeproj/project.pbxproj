@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E3197B01B5EBBAA00E0DC48 /* FavoriteRoomsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3197AF1B5EBBAA00E0DC48 /* FavoriteRoomsManager.m */; };
 		5E66EEEE1B55E97200F0F2B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EEED1B55E97200F0F2B1 /* main.m */; };
 		5E66EEF11B55E97200F0F2B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EEF01B55E97200F0F2B1 /* AppDelegate.m */; };
 		5E66EEF41B55E97200F0F2B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EEF31B55E97200F0F2B1 /* ViewController.m */; };
