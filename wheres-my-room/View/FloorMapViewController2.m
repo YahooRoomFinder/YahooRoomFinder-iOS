@@ -307,10 +307,12 @@ NSInteger const MAX_BEACONS = 20;
 
 - (void)beaconManager:(KDNBeaconManager *)beaconManager didRangeBeacons:(NSArray *)orderedBeaconItems inRegion:(CLBeaconRegion *)region {
     NSLog(@"Receiving beacon update");
+    NSLog(@"%@", beaconManager);
     for (BeaconItem *beacon in orderedBeaconItems) {
         if (beacon.accuracy < 0) {
             continue;
         }
+        beacon.accuracy *= 1.2;
         NSUUID *uuid = beacon.uuid;
         BOOL exists = NO;
         for (int i = 0; i < self.beacons.count; ++i) {
