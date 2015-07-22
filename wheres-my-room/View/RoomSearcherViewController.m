@@ -9,6 +9,7 @@
 #import "RoomSearcherViewController.h"
 #import "YahooRoomsManager.h"
 #import "Room.h"
+#import "RoomDetailControllerViewController.h"
 
 @interface RoomSearcherViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -78,6 +79,15 @@
     cell.textLabel.text = r.roomId;
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Room *r = (Room *)[self.searchedRooms objectAtIndex:indexPath.row];
+    NSString *selectedRoomId = r.roomId;
+    RoomDetailControllerViewController *detailViewController = [[RoomDetailControllerViewController alloc] init];
+    detailViewController.roomId = selectedRoomId;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
 
 
 /*
