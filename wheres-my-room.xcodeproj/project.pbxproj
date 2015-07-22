@@ -33,6 +33,8 @@
 		5E66EF7B1B5BB49200F0F2B1 /* FloorMapViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EF791B5BB49200F0F2B1 /* FloorMapViewController2.xib */; };
 		5E681D2A1B5D46E300029DA6 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E681D291B5D46E300029DA6 /* Config.m */; };
 		5E681D2D1B5D4C2C00029DA6 /* BeaconLocalityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E681D2C1B5D4C2C00029DA6 /* BeaconLocalityManager.m */; };
+		7B678EC21B5F50E100F0EA07 /* RoomSearcherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B678EC01B5F50E100F0EA07 /* RoomSearcherViewController.m */; };
+		7B678EC31B5F50E100F0EA07 /* RoomSearcherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B678EC11B5F50E100F0EA07 /* RoomSearcherViewController.xib */; };
 		7BF4CE331B5EB9D30016A319 /* FavoriteRoomsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF4CE321B5EB9D30016A319 /* FavoriteRoomsManager.m */; };
 		7BF4CE371B5EB9E30016A319 /* FavoriteRoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF4CE351B5EB9E30016A319 /* FavoriteRoomListViewController.m */; };
 		7BF4CE381B5EB9E30016A319 /* FavoriteRoomListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF4CE361B5EB9E30016A319 /* FavoriteRoomListViewController.xib */; };
@@ -116,6 +118,9 @@
 		5E681D291B5D46E300029DA6 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Config.m; path = Model/Config.m; sourceTree = "<group>"; };
 		5E681D2B1B5D4C2C00029DA6 /* BeaconLocalityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconLocalityManager.h; path = Control/BeaconLocalityManager.h; sourceTree = "<group>"; };
 		5E681D2C1B5D4C2C00029DA6 /* BeaconLocalityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconLocalityManager.m; path = Control/BeaconLocalityManager.m; sourceTree = "<group>"; };
+		7B678EBF1B5F50E100F0EA07 /* RoomSearcherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomSearcherViewController.h; path = View/RoomSearcherViewController.h; sourceTree = "<group>"; };
+		7B678EC01B5F50E100F0EA07 /* RoomSearcherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomSearcherViewController.m; path = View/RoomSearcherViewController.m; sourceTree = "<group>"; };
+		7B678EC11B5F50E100F0EA07 /* RoomSearcherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomSearcherViewController.xib; path = View/RoomSearcherViewController.xib; sourceTree = "<group>"; };
 		7BF4CE311B5EB9D30016A319 /* FavoriteRoomsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteRoomsManager.h; path = Control/FavoriteRoomsManager.h; sourceTree = "<group>"; };
 		7BF4CE321B5EB9D30016A319 /* FavoriteRoomsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteRoomsManager.m; path = Control/FavoriteRoomsManager.m; sourceTree = "<group>"; };
 		7BF4CE341B5EB9E30016A319 /* FavoriteRoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteRoomListViewController.h; path = View/FavoriteRoomListViewController.h; sourceTree = "<group>"; };
@@ -191,6 +196,9 @@
 				5E66EF121B55EA5B00F0F2B1 /* View */,
 				5E66EEEF1B55E97200F0F2B1 /* AppDelegate.h */,
 				5E66EEF01B55E97200F0F2B1 /* AppDelegate.m */,
+				7B678EBF1B5F50E100F0EA07 /* RoomSearcherViewController.h */,
+				7B678EC01B5F50E100F0EA07 /* RoomSearcherViewController.m */,
+				7B678EC11B5F50E100F0EA07 /* RoomSearcherViewController.xib */,
 				7BF4CE341B5EB9E30016A319 /* FavoriteRoomListViewController.h */,
 				7BF4CE351B5EB9E30016A319 /* FavoriteRoomListViewController.m */,
 				7BF4CE361B5EB9E30016A319 /* FavoriteRoomListViewController.xib */,
@@ -412,6 +420,7 @@
 				7BFB749F1B5DD5CD004ED75F /* RoomMettingsViewController.xib in Resources */,
 				5E66EF481B57C96400F0F2B1 /* FloorCell.xib in Resources */,
 				D4ABE1381B5EB14900C05B0F /* star@3x.png in Resources */,
+				7B678EC31B5F50E100F0EA07 /* RoomSearcherViewController.xib in Resources */,
 				D4ABE1361B5EB14900C05B0F /* point_objects@2x.png in Resources */,
 				D4ABE1311B5EB14900C05B0F /* ingredients_list@3x.png in Resources */,
 				7BFB74A41B5DD631004ED75F /* RoomMeetingCell.xib in Resources */,
@@ -446,6 +455,7 @@
 				D43698ED1B5BD73F00E9D094 /* KDNBeaconManager.m in Sources */,
 				5E66EF7A1B5BB49200F0F2B1 /* FloorMapViewController2.m in Sources */,
 				5E66EF5A1B5A1F1600F0F2B1 /* YahooRoomsManager.m in Sources */,
+				7B678EC21B5F50E100F0EA07 /* RoomSearcherViewController.m in Sources */,
 				5E66EF2A1B57BCD600F0F2B1 /* RoomsLocalityManager.m in Sources */,
 				5E66EEF11B55E97200F0F2B1 /* AppDelegate.m in Sources */,
 				5E66EEEE1B55E97200F0F2B1 /* main.m in Sources */,
@@ -575,6 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "wheres-my-room/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -585,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "wheres-my-room/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

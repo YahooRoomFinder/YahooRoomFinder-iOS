@@ -72,7 +72,7 @@ NSString * const kRoomBaseUrl = @"http://matteflat.corp.sg3.yahoo.com/room/v0/ro
     }];
 }
 
-- (void) getRooms:(NSString *)parameter complete:(void(^)(RoomMeetingInfo *room, NSError *error))completion {
+- (void) getRooms:(NSString *)parameter complete:(void(^)(NSArray *rooms, NSError *error))completion {
     NSString *url = [kRoomBaseUrl stringByAppendingFormat:@"?query=%@", parameter];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
