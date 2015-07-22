@@ -21,6 +21,7 @@
 - (IBAction)favoriteButtonClicked:(UIButton *)sender;
 
 @property (strong, nonatomic) RoomMeetingInfo *roomMeetingInfo;
+@property (strong, nonatomic) IBOutlet UIButton *meetingsBtn;
 
 @end
 
@@ -29,9 +30,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"Room ID: %@", self.roomId);
+    self.roomIdLabel.text = @"";
+    self.roomNameLabel.text = @"";
+    self.roomCapacityLabel.text = @"";
+    self.isRoomAvailableLabel.text = @"";
+    self.meetingsBtn.enabled = NO;
     YahooRoomsManager *mgr = [YahooRoomsManager sharedInstance];
     [mgr getRoomMeetingInfoById:self.roomId startTs:nil complete:^(RoomMeetingInfo *room, NSError *error) {
         if (error == nil) {
+            self.meetingsBtn.enabled = YES;
             self.roomMeetingInfo = room;
             
             self.roomIdLabel.text = room.roomId;

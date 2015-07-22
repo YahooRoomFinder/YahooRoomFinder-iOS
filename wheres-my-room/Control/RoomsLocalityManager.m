@@ -163,7 +163,14 @@
       @(11): @{
               @"realWidth": @(90.04297994),
               @"realHeight": @(49.51289398),
-              @"rooms": @[]
+              @"rooms": @[
+                      @{
+                          @"id": @"CR-TW-12FN-DanshuiRiver",
+                          @"ratioLocation": @[@(0.4415231188), @(0.1449752883)],
+                          @"ratioWidth": @(0.04079782412),
+                          @"ratioHeight": @(0.1136738056)
+                          }
+                      ]
               },
       @(12): @{
               @"realWidth": @(90.47277937),

@@ -11,6 +11,6 @@
 
 @interface RoomMeetingCell : UITableViewCell
 
--(RoomMeetingCell *) setMeetingInfo:(Meeting *)meeting;
+-(void) setMeetingInfo:(Meeting *)meeting;
 
 @end
