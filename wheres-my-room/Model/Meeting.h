@@ -12,8 +12,8 @@
 @property (strong, nonatomic) NSString *organizerName;
 @property (strong, nonatomic) NSString *organizerId;
 @property (strong, nonatomic) NSString *subject;
-@property (strong, nonatomic) NSDate *startTime;
-@property (strong, nonatomic) NSDate *endTime;
+@property (strong, nonatomic) NSString *startTime;
+@property (strong, nonatomic) NSString *endTime;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

@@ -20,13 +20,10 @@
 @implementation RoomMeetingCell
 
 -(void) setMeetingInfo:(Meeting *)meeting {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
-
     self.organizerLabel.text = meeting.organizerId;
     self.subjectLabel.text = meeting.subject;
-    self.startTimeLabel.text = [formatter stringFromDate:meeting.startTime];
-    self.endTimeLabel.text = [formatter stringFromDate:meeting.endTime];
+    self.startTimeLabel.text = meeting.startTime;
+    self.endTimeLabel.text = meeting.endTime;
 }
 
 - (void)awakeFromNib {
