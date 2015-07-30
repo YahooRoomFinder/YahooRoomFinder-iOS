@@ -44,6 +44,11 @@ NSString * const CALENDER_CELL = @"CalendarCell";
     [self.calendarManager loadCalendar];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
+
 - (void)displayResultWithTicket:(GTLServiceTicket *)ticket
              finishedWithObject:(GTLCalendarEvents *)events
                           error:(NSError *)error {

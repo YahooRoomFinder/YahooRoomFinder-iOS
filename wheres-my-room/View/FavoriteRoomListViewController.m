@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *favoriteRoomsTable;
 @property (weak, nonatomic) NSArray *favoriteRooms;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
 @end
 
@@ -41,6 +42,16 @@
     
     self.favoriteRoomsTable.delegate = self;
     self.favoriteRoomsTable.dataSource = self;
+    
+
+    [self.bgImageView setFrame:self.favoriteRoomsTable.frame];
+    
+    [self.favoriteRoomsTable setBackgroundView:self.bgImageView];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)didReceiveMemoryWarning {
