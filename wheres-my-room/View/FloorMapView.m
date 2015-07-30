@@ -29,6 +29,8 @@
         [self commitInit];
     }
     self.currentLocImageView.hidden = YES;
+    
+    //self.interestedRoomId = @"CR-TW-12FS-LoveRiver";
     [self.roomPinImageView.layer setOpaque:NO];
     return self;
 }
@@ -78,7 +80,7 @@
             CGPoint roomCenter = CGPointMake(roomOrigin.x + roomLocalityInfo.ratioWidth / 2,
                                              roomOrigin.y + roomLocalityInfo.ratioHeight / 2);
             CGPoint realPoint = CGPointMake(roomCenter.x * mapWidth + mapOrigin.x,
-                                             roomCenter.y * mapHeight + mapOrigin.y);
+                                             roomCenter.y * mapHeight + mapOrigin.y - 12);
             self.roomPinImageView.center = realPoint;
             self.roomPinImageView.hidden = NO;
         }
