@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) RoomMeetingInfo *roomMeetingInfo;
 @property (strong, nonatomic) IBOutlet UIButton *meetingsBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
 @end
 
@@ -51,7 +52,9 @@
 
             self.navigationItem.title = room.name;
         }
-    }];    
+    }];
+    [self.view addSubview:self.bgImageView];
+    [self.view sendSubviewToBack:self.bgImageView];
 }
 
 

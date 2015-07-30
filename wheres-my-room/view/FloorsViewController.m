@@ -15,6 +15,7 @@
 @interface FloorsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *floorsTable;
 @property (strong, nonatomic) RoomsLocalityManager *roomsLocalityManager;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
 // Array of FloorLocalityInfo
 @property (strong, nonatomic) NSArray *floors;
@@ -40,6 +41,9 @@ NSString * const FLOOR_CELL = @"FloorCell";
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    [self.bgImageView setFrame:self.floorsTable.frame];
+    
+    [self.floorsTable setBackgroundView:self.bgImageView];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

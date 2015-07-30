@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FloorsViewController">
             <connections>
+                <outlet property="bgImageView" destination="07I-2S-9HB" id="nlR-Jm-gtE"/>
                 <outlet property="floorsTable" destination="YGT-MN-e4O" id="wsr-lk-KlZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,13 +20,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_main.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="07I-2S-9HB">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="YGT-MN-e4O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4IV-5j-ka7"/>
+                <constraint firstItem="07I-2S-9HB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CgW-SR-Z0A"/>
+                <constraint firstAttribute="bottom" secondItem="07I-2S-9HB" secondAttribute="bottom" id="J0f-rz-06t"/>
+                <constraint firstItem="07I-2S-9HB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MxE-2E-glg"/>
                 <constraint firstAttribute="trailing" secondItem="YGT-MN-e4O" secondAttribute="trailing" id="RJf-jo-Wl8"/>
                 <constraint firstItem="YGT-MN-e4O" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YfW-S0-CeT"/>
                 <constraint firstAttribute="bottom" secondItem="YGT-MN-e4O" secondAttribute="bottom" id="anf-5I-Mly"/>
+                <constraint firstAttribute="trailing" secondItem="07I-2S-9HB" secondAttribute="trailing" id="fkE-57-PHa"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
@@ -51,4 +59,7 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="bg_main.jpg" width="1242" height="2208"/>
+    </resources>
 </document>

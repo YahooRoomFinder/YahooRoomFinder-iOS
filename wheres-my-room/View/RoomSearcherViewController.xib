@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomSearcherViewController">
             <connections>
+                <outlet property="bgImageView" destination="goQ-Ea-XPQ" id="jfh-dI-huB"/>
                 <outlet property="searchBar" destination="ccM-nY-uzF" id="bCe-eZ-goX"/>
                 <outlet property="searchResultTable" destination="PCh-Qi-B7Z" id="pl3-6b-zfN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -19,11 +20,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1d-xI-0Oz">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-Qi-B7Z">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-Qi-B7Z">
                             <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
-                        <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccM-nY-uzF">
+                        <searchBar contentMode="redraw" ambiguous="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccM-nY-uzF">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
@@ -31,16 +32,23 @@
                                 <string>Title</string>
                             </scopeButtonTitles>
                         </searchBar>
+                        <imageView userInteractionEnabled="NO" tag="-6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bg_main.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="goQ-Ea-XPQ">
+                            <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="goQ-Ea-XPQ" firstAttribute="leading" secondItem="I1d-xI-0Oz" secondAttribute="leading" id="0dc-4N-BtS"/>
                         <constraint firstAttribute="bottom" secondItem="PCh-Qi-B7Z" secondAttribute="bottom" id="77B-Cj-xyj"/>
                         <constraint firstItem="PCh-Qi-B7Z" firstAttribute="top" secondItem="ccM-nY-uzF" secondAttribute="bottom" id="BiS-hD-d18"/>
                         <constraint firstItem="ccM-nY-uzF" firstAttribute="leading" secondItem="I1d-xI-0Oz" secondAttribute="leading" id="EwW-33-5FZ"/>
+                        <constraint firstAttribute="trailing" secondItem="goQ-Ea-XPQ" secondAttribute="trailing" id="LOx-XN-hQo"/>
                         <constraint firstItem="PCh-Qi-B7Z" firstAttribute="leading" secondItem="I1d-xI-0Oz" secondAttribute="leading" id="Qvp-U8-iV5"/>
                         <constraint firstAttribute="trailing" secondItem="ccM-nY-uzF" secondAttribute="trailing" id="asz-Yl-75Y"/>
                         <constraint firstItem="ccM-nY-uzF" firstAttribute="top" secondItem="I1d-xI-0Oz" secondAttribute="top" id="cwf-IG-FHK"/>
+                        <constraint firstItem="goQ-Ea-XPQ" firstAttribute="top" secondItem="ccM-nY-uzF" secondAttribute="bottom" id="kBH-E4-g34"/>
                         <constraint firstAttribute="trailing" secondItem="PCh-Qi-B7Z" secondAttribute="trailing" id="qOT-Wc-ffk"/>
+                        <constraint firstAttribute="bottom" secondItem="goQ-Ea-XPQ" secondAttribute="bottom" id="yPe-iD-PyJ"/>
                     </constraints>
                 </view>
             </subviews>
@@ -55,4 +63,7 @@
             <point key="canvasLocation" x="290" y="334"/>
         </view>
     </objects>
+    <resources>
+        <image name="bg_main.jpg" width="1242" height="2208"/>
+    </resources>
 </document>

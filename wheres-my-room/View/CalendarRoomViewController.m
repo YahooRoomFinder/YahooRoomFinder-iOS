@@ -16,6 +16,7 @@ NSString * const CALENDER_CELL = @"CalendarCell";
 @interface CalendarRoomViewController ()
 
 @property NSMutableArray *tableData;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
 @end
 
@@ -37,6 +38,10 @@ NSString * const CALENDER_CELL = @"CalendarCell";
     [self.tableView registerNib: [UINib nibWithNibName: NSStringFromClass([CalendarCell class]) bundle:nil]forCellReuseIdentifier:CALENDER_CELL];
     self.calendarManager = [[CalendarManager alloc] init];
     self.calendarManager.delegate = self;
+    
+    [self.bgImageView setFrame:self.tableView.frame];
+    
+    [self.tableView setBackgroundView:self.bgImageView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
