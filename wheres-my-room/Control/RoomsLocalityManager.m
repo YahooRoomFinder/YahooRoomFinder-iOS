@@ -169,6 +169,12 @@
                           @"ratioLocation": @[@(0.4415231188), @(0.1449752883)],
                           @"ratioWidth": @(0.04079782412),
                           @"ratioHeight": @(0.1136738056)
+                          },
+                      @{
+                          @"id": @"CR-TW-12FS-LoveRiver",
+                          @"ratioLocation": @[@(0.5631983736), @(0.6449581064)],
+                          @"ratioWidth": @(0.07088467),
+                          @"ratioHeight": @(0.06989051)
                           }
                       ]
               },

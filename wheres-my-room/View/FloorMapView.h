@@ -18,6 +18,8 @@
 @property (assign, nonatomic) CGPoint currentRatioPoint;
 @property (strong, nonatomic) NSArray *roomLocalityInfos;
 @property (weak, nonatomic) id<FloorMapViewDelegate> delegate;
+@property (strong, nonatomic) NSString *interestedRoomId;
+
 - (void)setCurrentRatioPoint:(CGPoint)ratioPoint animated:(BOOL)animated;
 - (void)pinchBeganAtPoint:(CGPoint)point;
 - (void)pinchChangedAtPoint:(CGPoint)point :(CGFloat)scale;

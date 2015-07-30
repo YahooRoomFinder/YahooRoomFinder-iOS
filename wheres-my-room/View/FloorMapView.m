@@ -17,6 +17,7 @@
 @property (assign, nonatomic) CGFloat relativeScale;
 @property (weak, nonatomic) IBOutlet UIImageView *currentLocImageView;
 @property (assign, nonatomic) CGPoint lastPanPoint;
+@property (weak, nonatomic) IBOutlet UIImageView *roomPinImageView;
 @property (assign, nonatomic) CGSize initialMapSize;
 @end
 
@@ -28,6 +29,7 @@
         [self commitInit];
     }
     self.currentLocImageView.hidden = YES;
+    [self.roomPinImageView.layer setOpaque:NO];
     return self;
 }
 
@@ -65,6 +67,25 @@
     [self.mapImageView addObserver:self forKeyPath:@"image" options:0 context:nil];
 }
 
+- (void)drawRoomPin:(NSString *)roomId {
+    for (RoomLocalityInfo *roomLocalityInfo in self.roomLocalityInfos) {
+        if ([roomLocalityInfo.roomId compare:roomId] == NSOrderedSame) {
+            CGPoint mapOrigin = [self mapOrigin];
+            CGFloat mapWidth = [self mapWidth];
+            CGFloat mapHeight = [self mapHeight];
+
+            CGPoint roomOrigin = roomLocalityInfo.ratioLocation;
+            CGPoint roomCenter = CGPointMake(roomOrigin.x + roomLocalityInfo.ratioWidth / 2,
+                                             roomOrigin.y + roomLocalityInfo.ratioHeight / 2);
+            CGPoint realPoint = CGPointMake(roomCenter.x * mapWidth + mapOrigin.x,
+                                             roomCenter.y * mapHeight + mapOrigin.y);
+            self.roomPinImageView.center = realPoint;
+            self.roomPinImageView.hidden = NO;
+        }
+    }
+
+}
+
 - (void)resetCurrentRatioPoint {
     self.currentRatioPoint = CGPointMake(0.5, 0.5);
 }
@@ -88,6 +109,7 @@
     [self resetMapSize];
     [self updateInitialMapSize];
     [self updateCurrentRatioPoint:FALSE];
+    [self drawRoomPin:self.interestedRoomId];
 }
 
 - (void)setMapImage:(UIImage *)mapImage {
@@ -122,6 +144,7 @@
     CGFloat nowScale = self.absoluteScale * scale;
     self.mapImageView.transform = CGAffineTransformMakeScale(nowScale, nowScale);
     [self updateCurrentRatioPoint:FALSE];
+    [self drawRoomPin:self.interestedRoomId];
 }
 
 - (void)pinchEndedAtPoint:(CGPoint)point {
@@ -132,6 +155,7 @@
         [UIView animateWithDuration:0.5 animations:^{
             self.mapImageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
             [self updateCurrentRatioPoint:FALSE];
+            [self drawRoomPin:self.interestedRoomId];
         } completion:^(BOOL finished) {
             self.absoluteScale = 1.0;
         }];
@@ -148,6 +172,7 @@
     self.mapImageView.center = newCenter;
     self.lastPanPoint = point;
     [self updateCurrentRatioPoint:FALSE];
+    [self drawRoomPin:self.interestedRoomId];
 }
 
 - (void)panEndedAtPoint:(CGPoint) point {
@@ -165,6 +190,7 @@
 - (void)setCurrentRatioPoint:(CGPoint)ratioPoint animated:(BOOL)animated {
     _currentRatioPoint = ratioPoint;
     [self updateCurrentRatioPoint:animated];
+    [self drawRoomPin:self.interestedRoomId];
 }
 
 - (CGFloat)mapWidth {
@@ -216,6 +242,7 @@
     CGFloat mapHeight = [self mapHeight];
     CGPoint ratioPoint = CGPointMake((point.x - mapOrigin.x) / mapWidth,
                         (point.y - mapOrigin.y) / mapHeight);
+    //NSLog(@"aaa : %@", NSStringFromCGPoint(ratioPoint));
     for (RoomLocalityInfo *roomLocalityInfo in self.roomLocalityInfos) {
         CGPoint roomOrigin = roomLocalityInfo.ratioLocation;
         if (ratioPoint.x >= roomOrigin.x &&
