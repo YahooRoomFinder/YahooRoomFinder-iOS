@@ -312,7 +312,7 @@ NSInteger const MAX_BEACONS = 20;
         if (beacon.accuracy < 0) {
             continue;
         }
-        beacon.accuracy *= 1.2;
+        beacon.accuracy *= 1.5;
         NSUUID *uuid = beacon.uuid;
         BOOL exists = NO;
         for (int i = 0; i < self.beacons.count; ++i) {

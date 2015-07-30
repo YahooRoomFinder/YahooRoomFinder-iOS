@@ -129,7 +129,7 @@
     self.relativeScale = 1.0;
     if (self.absoluteScale < 1.0) {
         self.absoluteScale = 1.0;
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             self.mapImageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
             [self updateCurrentRatioPoint:FALSE];
         } completion:^(BOOL finished) {

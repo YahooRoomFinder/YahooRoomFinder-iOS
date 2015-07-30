@@ -30,9 +30,9 @@
 //    self.window.rootViewController = [Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]];
     self.tabBarController = [[UITabBarController alloc] init];
     [self.tabBarController setViewControllers:@[
-                                                [Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]]
+                                                [Utils embedNavBarForViewController:[[RoomSearcherViewController alloc] init]]
                                                 ,[Utils embedNavBarForViewController:[[FavoriteRoomListViewController alloc] init]]
-                                                ,[Utils embedNavBarForViewController:[[RoomSearcherViewController alloc] init]]
+                                                ,[Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]]
                                                 ]];
     [self.window setRootViewController:self.tabBarController];
     

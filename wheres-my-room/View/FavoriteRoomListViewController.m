@@ -20,7 +20,7 @@
 @implementation FavoriteRoomListViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self.title = @"favorite";
+    self.title = @"Favorite";
     [self.tabBarItem setImage:[UIImage imageNamed:@"star"]];
     return self;
 }
