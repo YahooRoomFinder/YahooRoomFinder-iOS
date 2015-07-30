@@ -42,6 +42,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.meetings.count;

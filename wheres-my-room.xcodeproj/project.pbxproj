@@ -45,6 +45,7 @@
 		7BFB74A31B5DD631004ED75F /* RoomMeetingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB74A11B5DD631004ED75F /* RoomMeetingCell.m */; };
 		7BFB74A41B5DD631004ED75F /* RoomMeetingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BFB74A21B5DD631004ED75F /* RoomMeetingCell.xib */; };
 		967C8F91F8A96DB8D4E0FDCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B721F063BA94A5CC6E9F703E /* libPods.a */; };
+		D0C619151B6A5E550010B855 /* bg_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C619141B6A5E550010B855 /* bg_main.jpg */; };
 		D40BF4B41B69F75B0045C85F /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40BF4B31B69F75B0045C85F /* CalendarManager.m */; };
 		D40BF4B81B6A082A0045C85F /* CalendarRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40BF4B61B6A082A0045C85F /* CalendarRoomViewController.m */; };
 		D40BF4B91B6A082A0045C85F /* CalendarRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40BF4B71B6A082A0045C85F /* CalendarRoomViewController.xib */; };
@@ -148,6 +149,7 @@
 		7BFB74A21B5DD631004ED75F /* RoomMeetingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomMeetingCell.xib; path = View/RoomMeetingCell.xib; sourceTree = "<group>"; };
 		94CFA6FC68F32BE6AED6B8CD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B721F063BA94A5CC6E9F703E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C619141B6A5E550010B855 /* bg_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_main.jpg; path = "wheres-my-room/bg_main.jpg"; sourceTree = "<group>"; };
 		D40BF4B21B69F75B0045C85F /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
 		D40BF4B31B69F75B0045C85F /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
 		D40BF4B51B6A082A0045C85F /* CalendarRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarRoomViewController.h; path = View/CalendarRoomViewController.h; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		5E66EEDF1B55E97200F0F2B1 = {
 			isa = PBXGroup;
 			children = (
+				D0C619141B6A5E550010B855 /* bg_main.jpg */,
 				5E66EF4F1B58905B00F0F2B1 /* MapKit.framework */,
 				5E66EEEA1B55E97200F0F2B1 /* wheres-my-room */,
 				5E66EF041B55E97200F0F2B1 /* wheres-my-roomTests */,
@@ -468,6 +471,7 @@
 				D40BF4C81B6A51580045C85F /* calendar.png in Resources */,
 				5E66EEFC1B55E97200F0F2B1 /* LaunchScreen.xib in Resources */,
 				D40BF4CA1B6A51580045C85F /* calendar@3x.png in Resources */,
+				D0C619151B6A5E550010B855 /* bg_main.jpg in Resources */,
 				D4ABE1351B5EB14900C05B0F /* point_objects@3x.png in Resources */,
 				D4ABE1321B5EB14900C05B0F /* ingredients_list@2x.png in Resources */,
 				D4ABE1331B5EB14900C05B0F /* ingredients_list.png in Resources */,

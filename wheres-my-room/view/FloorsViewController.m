@@ -42,6 +42,11 @@ NSString * const FLOOR_CELL = @"FloorCell";
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
+
 - (NSArray*) sortFloors:(NSArray*) floors {
     return [floors sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         FloorLocalityInfo *floor1 = obj1;
