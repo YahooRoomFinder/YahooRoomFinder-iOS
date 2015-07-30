@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomMettingsViewController">
             <connections>
+                <outlet property="bgImageView" destination="wnl-LO-Dmc" id="hAK-5S-hIt"/>
                 <outlet property="meetingsTable" destination="tRt-JL-LOi" id="ufC-ue-LEV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,14 +20,24 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg_main.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wnl-LO-Dmc">
+                    <rect key="frame" x="180" y="236" width="240" height="128"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="tRt-JL-LOi" secondAttribute="bottom" id="D1U-yp-ebS"/>
+                <constraint firstItem="wnl-LO-Dmc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OPV-qK-bHw"/>
+                <constraint firstItem="wnl-LO-Dmc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gcu-3Q-bNX"/>
+                <constraint firstAttribute="bottom" secondItem="wnl-LO-Dmc" secondAttribute="bottom" id="ghU-eD-yIx"/>
                 <constraint firstItem="tRt-JL-LOi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kT8-G6-vvF"/>
                 <constraint firstAttribute="trailing" secondItem="tRt-JL-LOi" secondAttribute="trailing" id="myn-mc-ExD"/>
                 <constraint firstItem="tRt-JL-LOi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sE8-CI-Rrs"/>
+                <constraint firstAttribute="trailing" secondItem="wnl-LO-Dmc" secondAttribute="trailing" id="zeW-Cv-L8p"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="bg_main.jpg" width="1242" height="2208"/>
+    </resources>
 </document>

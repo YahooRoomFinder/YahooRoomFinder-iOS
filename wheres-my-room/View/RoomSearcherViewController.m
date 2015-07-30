@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *searchResultTable;
 
 @property (strong, nonatomic) NSArray *searchedRooms;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
 @end
 
@@ -42,6 +43,9 @@
     
     self.searchResultTable.delegate = self;
     self.searchResultTable.dataSource = self;
+    [self.bgImageView setFrame:self.searchResultTable.frame];
+    
+    [self.searchResultTable setBackgroundView:self.bgImageView];
 }
 
 - (void)didReceiveMemoryWarning {

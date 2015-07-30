@@ -12,6 +12,7 @@
 @interface RoomMettingsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *meetingsTable;
 
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property NSArray *meetings;
 
 @end
@@ -35,6 +36,10 @@
     [self.meetingsTable registerNib:[UINib nibWithNibName: NSStringFromClass([RoomMeetingCell class]) bundle:nil] forCellReuseIdentifier:@"RoomMeetingCell"];
     self.meetingsTable.dataSource = self;
     self.meetingsTable.delegate = self;
+    
+    [self.bgImageView setFrame:self.meetingsTable.frame];
+    
+    [self.meetingsTable setBackgroundView:self.bgImageView];
 }
 
 - (void)didReceiveMemoryWarning {

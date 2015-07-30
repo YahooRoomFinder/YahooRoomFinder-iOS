@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarRoomViewController">
             <connections>
+                <outlet property="bgImageView" destination="lnj-Z1-fbO" id="Sdf-j4-Eel"/>
                 <outlet property="tableView" destination="Dii-b9-3hg" id="ZzY-Db-Ukd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,11 +21,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_main.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lnj-Z1-fbO">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Dii-b9-3hg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Wh-n3-eRT"/>
+                <constraint firstAttribute="bottom" secondItem="lnj-Z1-fbO" secondAttribute="bottom" id="5ZU-e1-eey"/>
+                <constraint firstAttribute="trailing" secondItem="lnj-Z1-fbO" secondAttribute="trailing" id="79m-yM-rl7"/>
+                <constraint firstItem="lnj-Z1-fbO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Kn-D8-cn9"/>
                 <constraint firstItem="Dii-b9-3hg" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="8Y7-J0-Qa8"/>
+                <constraint firstItem="lnj-Z1-fbO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bEx-el-DA8"/>
                 <constraint firstAttribute="trailing" secondItem="Dii-b9-3hg" secondAttribute="trailing" id="pOd-3y-gw1"/>
                 <constraint firstAttribute="bottom" secondItem="Dii-b9-3hg" secondAttribute="bottom" id="q7Q-DI-FN2"/>
                 <constraint firstItem="Dii-b9-3hg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tT6-4M-S4E"/>
@@ -42,4 +50,7 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="bg_main.jpg" width="1242" height="2208"/>
+    </resources>
 </document>
