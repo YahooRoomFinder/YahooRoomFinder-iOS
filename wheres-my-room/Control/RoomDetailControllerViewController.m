@@ -10,6 +10,7 @@
 #import "YahooRoomsManager.h"
 #import "RoomMettingsViewController.h"
 #import "FavoriteRoomsManager.h"
+#import "FloorMapViewController2.h"
 
 @interface RoomDetailControllerViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *roomIdLabel;
@@ -23,6 +24,7 @@
 @property (strong, nonatomic) RoomMeetingInfo *roomMeetingInfo;
 @property (strong, nonatomic) IBOutlet UIButton *meetingsBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+- (IBAction)onShowOnMapClicked:(UIButton *)sender;
 
 @end
 
@@ -89,5 +91,14 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.favoritedButton setHighlighted:[favoriteRoomsMgr isFavoriteRoom:self.roomMeetingInfo.roomId]];
     });
+}
+
+- (IBAction)onShowOnMapClicked:(UIButton *)sender {
+    UITabBarController *tabBarController = self.tabBarController;
+    UINavigationController *navController = [tabBarController.viewControllers objectAtIndex:2];
+    
+    FloorMapViewController2 *floorMapViewController = (FloorMapViewController2 *)[((UINavigationController *)navController) topViewController];
+    floorMapViewController.pinnedRoomId = self.roomId;
+    tabBarController.selectedViewController = navController;
 }
 @end

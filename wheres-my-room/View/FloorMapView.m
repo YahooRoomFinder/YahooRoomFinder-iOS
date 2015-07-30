@@ -31,7 +31,7 @@
     self.currentLocImageView.hidden = YES;
     
     //self.interestedRoomId = @"CR-TW-12FS-LoveRiver";
-    [self.roomPinImageView.layer setOpaque:NO];
+    //[self.roomPinImageView.layer setOpaque:NO];
     return self;
 }
 
@@ -70,6 +70,11 @@
 }
 
 - (void)drawRoomPin:(NSString *)roomId {
+    if (roomId == nil) {
+        self.roomPinImageView.hidden = YES;
+        return;
+    }
+    
     for (RoomLocalityInfo *roomLocalityInfo in self.roomLocalityInfos) {
         if ([roomLocalityInfo.roomId compare:roomId] == NSOrderedSame) {
             CGPoint mapOrigin = [self mapOrigin];
@@ -119,6 +124,7 @@
     [self resetMapSize];
     [self updateInitialMapSize];
     [self resetCurrentRatioPoint];
+    [self drawRoomPin:self.interestedRoomId];
 }
 
 - (void)updateConstraints {

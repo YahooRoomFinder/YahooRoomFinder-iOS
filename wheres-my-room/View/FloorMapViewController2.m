@@ -71,6 +71,7 @@ NSInteger const MAX_BEACONS = 20;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.floorMapView.interestedRoomId = self.pinnedRoomId;
 
     // Beacon
     [self.beaconManager startMonitoring];
@@ -105,6 +106,7 @@ NSInteger const MAX_BEACONS = 20;
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.beaconManager stopMonitoring];
+    self.pinnedRoomId = nil;
     NSLog(@"Stop monitoring for beacons");
 }
 

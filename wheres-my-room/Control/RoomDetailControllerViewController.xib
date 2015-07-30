@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -22,49 +22,49 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HO4-zD-cCO">
-                    <rect key="frame" x="8" y="80" width="27" height="21"/>
+                    <rect key="frame" x="8" y="80" width="26.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cG-vo-JQx">
-                    <rect key="frame" x="51" y="80" width="134" height="21"/>
+                    <rect key="frame" x="51" y="80" width="134" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvA-CE-StI">
-                    <rect key="frame" x="8" y="108" width="55" height="21"/>
+                    <rect key="frame" x="8" y="108" width="55" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxr-Zp-p0N">
-                    <rect key="frame" x="79" y="108" width="163" height="21"/>
+                    <rect key="frame" x="79" y="108" width="163" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacity :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXM-PR-FYd">
-                    <rect key="frame" x="8" y="138" width="78" height="21"/>
+                    <rect key="frame" x="8" y="138" width="78" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Room Capacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wl-nk-Brs">
-                    <rect key="frame" x="102" y="138" width="186" height="21"/>
+                    <rect key="frame" x="102" y="138" width="185.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-HQ-aik">
-                    <rect key="frame" x="8" y="167" width="79" height="21"/>
+                    <rect key="frame" x="8" y="166" width="78.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Meeting Room Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-03-GXK">
-                    <rect key="frame" x="102" y="167" width="204" height="21"/>
+                    <rect key="frame" x="102" y="166" width="204" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -91,6 +91,15 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg_main.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="I8Q-1I-AlO">
                     <rect key="frame" x="143" y="27" width="277" height="337"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkN-JV-phh">
+                    <rect key="frame" x="8" y="239" width="95" height="30"/>
+                    <state key="normal" title="Show on Map">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onShowOnMapClicked:" destination="-1" eventType="touchUpInside" id="RKA-XZ-IQP"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -107,12 +116,14 @@
                 <constraint firstItem="j1w-dv-Ej9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Wsf-Y4-Ifj"/>
                 <constraint firstItem="zWC-HQ-aik" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Zr0-dN-DCk"/>
                 <constraint firstItem="HO4-zD-cCO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="eSb-uk-Xgc"/>
+                <constraint firstItem="kkN-JV-phh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="f4b-Wg-yKy"/>
                 <constraint firstItem="MvA-CE-StI" firstAttribute="top" secondItem="9cG-vo-JQx" secondAttribute="bottom" constant="8" id="hyY-ey-poW"/>
                 <constraint firstItem="8Wl-nk-Brs" firstAttribute="centerY" secondItem="QXM-PR-FYd" secondAttribute="centerY" id="iMj-Yr-iRJ"/>
                 <constraint firstItem="j1w-dv-Ej9" firstAttribute="top" secondItem="zWC-HQ-aik" secondAttribute="bottom" constant="14.5" id="jh7-QH-gqg"/>
                 <constraint firstItem="I8Q-1I-AlO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kDb-lg-qoP"/>
                 <constraint firstItem="8Wl-nk-Brs" firstAttribute="leading" secondItem="QXM-PR-FYd" secondAttribute="trailing" constant="16" id="mJK-1m-GbT"/>
                 <constraint firstItem="HO4-zD-cCO" firstAttribute="centerY" secondItem="8Yr-Bm-Eq0" secondAttribute="centerY" id="mYq-5j-QH5"/>
+                <constraint firstItem="kkN-JV-phh" firstAttribute="top" secondItem="j1w-dv-Ej9" secondAttribute="bottom" constant="8" id="myd-fY-0aQ"/>
                 <constraint firstItem="kxr-Zp-p0N" firstAttribute="centerY" secondItem="MvA-CE-StI" secondAttribute="centerY" id="p48-0f-CbI"/>
                 <constraint firstItem="HO4-zD-cCO" firstAttribute="centerY" secondItem="9cG-vo-JQx" secondAttribute="centerY" id="rpi-cs-BCi"/>
                 <constraint firstAttribute="trailing" secondItem="8Yr-Bm-Eq0" secondAttribute="trailing" constant="20" id="tGL-hc-fxQ"/>

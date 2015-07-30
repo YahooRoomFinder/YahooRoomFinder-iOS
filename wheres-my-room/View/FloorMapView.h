@@ -29,6 +29,7 @@
 - (void)panEndedAtPoint:(CGPoint) point;
 - (void)showCurrentPoint:(BOOL)enable;
 - (void)setMapImage:(UIImage *)mapImage;
+- (void)drawRoomPin:(NSString *)roomId;
 
 // @param rooms array of RoomLocalityInfo
 - (void)setRoomLocalityInfos:(NSArray*)rooms;

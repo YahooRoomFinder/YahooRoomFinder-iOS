@@ -10,4 +10,6 @@
 
 @interface FloorMapViewController2 : UIViewController
 
+@property (strong, nonatomic) NSString *pinnedRoomId;
+
 @end
