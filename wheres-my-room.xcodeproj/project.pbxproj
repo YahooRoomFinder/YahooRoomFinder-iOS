@@ -46,6 +46,14 @@
 		7BFB74A41B5DD631004ED75F /* RoomMeetingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BFB74A21B5DD631004ED75F /* RoomMeetingCell.xib */; };
 		967C8F91F8A96DB8D4E0FDCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B721F063BA94A5CC6E9F703E /* libPods.a */; };
 		D40BF4B41B69F75B0045C85F /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40BF4B31B69F75B0045C85F /* CalendarManager.m */; };
+		D40BF4B81B6A082A0045C85F /* CalendarRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40BF4B61B6A082A0045C85F /* CalendarRoomViewController.m */; };
+		D40BF4B91B6A082A0045C85F /* CalendarRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40BF4B71B6A082A0045C85F /* CalendarRoomViewController.xib */; };
+		D40BF4C01B6A10A30045C85F /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D40BF4BE1B6A10A30045C85F /* CalendarCell.m */; };
+		D40BF4C11B6A10A30045C85F /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40BF4BF1B6A10A30045C85F /* CalendarCell.xib */; };
+		D40BF4C41B6A350A0045C85F /* BookRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = D40BF4C31B6A350A0045C85F /* BookRoom.m */; };
+		D40BF4C81B6A51580045C85F /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = D40BF4C51B6A51580045C85F /* calendar.png */; };
+		D40BF4C91B6A51580045C85F /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D40BF4C61B6A51580045C85F /* calendar@2x.png */; };
+		D40BF4CA1B6A51580045C85F /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D40BF4C71B6A51580045C85F /* calendar@3x.png */; };
 		D43698EC1B5BD73F00E9D094 /* BeaconItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D43698E91B5BD73F00E9D094 /* BeaconItem.m */; };
 		D43698ED1B5BD73F00E9D094 /* KDNBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D43698EB1B5BD73F00E9D094 /* KDNBeaconManager.m */; };
 		D4ABE1311B5EB14900C05B0F /* ingredients_list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4ABE1281B5EB14900C05B0F /* ingredients_list@3x.png */; };
@@ -142,6 +150,17 @@
 		B721F063BA94A5CC6E9F703E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40BF4B21B69F75B0045C85F /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
 		D40BF4B31B69F75B0045C85F /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
+		D40BF4B51B6A082A0045C85F /* CalendarRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarRoomViewController.h; path = View/CalendarRoomViewController.h; sourceTree = "<group>"; };
+		D40BF4B61B6A082A0045C85F /* CalendarRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarRoomViewController.m; path = View/CalendarRoomViewController.m; sourceTree = "<group>"; };
+		D40BF4B71B6A082A0045C85F /* CalendarRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarRoomViewController.xib; path = View/CalendarRoomViewController.xib; sourceTree = "<group>"; };
+		D40BF4BD1B6A10A30045C85F /* CalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarCell.h; path = View/CalendarCell.h; sourceTree = "<group>"; };
+		D40BF4BE1B6A10A30045C85F /* CalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarCell.m; path = View/CalendarCell.m; sourceTree = "<group>"; };
+		D40BF4BF1B6A10A30045C85F /* CalendarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarCell.xib; path = View/CalendarCell.xib; sourceTree = "<group>"; };
+		D40BF4C21B6A350A0045C85F /* BookRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRoom.h; sourceTree = "<group>"; };
+		D40BF4C31B6A350A0045C85F /* BookRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRoom.m; sourceTree = "<group>"; };
+		D40BF4C51B6A51580045C85F /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		D40BF4C61B6A51580045C85F /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
+		D40BF4C71B6A51580045C85F /* calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@3x.png"; sourceTree = "<group>"; };
 		D43698E81B5BD73F00E9D094 /* BeaconItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconItem.h; sourceTree = "<group>"; };
 		D43698E91B5BD73F00E9D094 /* BeaconItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconItem.m; sourceTree = "<group>"; };
 		D43698EA1B5BD73F00E9D094 /* KDNBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDNBeaconManager.h; sourceTree = "<group>"; };
@@ -230,6 +249,9 @@
 		5E66EEEB1B55E97200F0F2B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D40BF4C51B6A51580045C85F /* calendar.png */,
+				D40BF4C61B6A51580045C85F /* calendar@2x.png */,
+				D40BF4C71B6A51580045C85F /* calendar@3x.png */,
 				D4ABE1281B5EB14900C05B0F /* ingredients_list@3x.png */,
 				D4ABE1291B5EB14900C05B0F /* ingredients_list@2x.png */,
 				D4ABE12A1B5EB14900C05B0F /* ingredients_list.png */,
@@ -286,6 +308,12 @@
 				5E66EF771B5BB49200F0F2B1 /* FloorMapViewController2.h */,
 				5E66EF781B5BB49200F0F2B1 /* FloorMapViewController2.m */,
 				5E66EF791B5BB49200F0F2B1 /* FloorMapViewController2.xib */,
+				D40BF4B51B6A082A0045C85F /* CalendarRoomViewController.h */,
+				D40BF4B61B6A082A0045C85F /* CalendarRoomViewController.m */,
+				D40BF4B71B6A082A0045C85F /* CalendarRoomViewController.xib */,
+				D40BF4BD1B6A10A30045C85F /* CalendarCell.h */,
+				D40BF4BE1B6A10A30045C85F /* CalendarCell.m */,
+				D40BF4BF1B6A10A30045C85F /* CalendarCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -327,6 +355,8 @@
 				5E66EF6E1B5A1FE400F0F2B1 /* FloorLocalityInfo.m */,
 				5E681D281B5D46E300029DA6 /* Config.h */,
 				5E681D291B5D46E300029DA6 /* Config.m */,
+				D40BF4C21B6A350A0045C85F /* BookRoom.h */,
+				D40BF4C31B6A350A0045C85F /* BookRoom.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -435,7 +465,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40BF4C81B6A51580045C85F /* calendar.png in Resources */,
 				5E66EEFC1B55E97200F0F2B1 /* LaunchScreen.xib in Resources */,
+				D40BF4CA1B6A51580045C85F /* calendar@3x.png in Resources */,
 				D4ABE1351B5EB14900C05B0F /* point_objects@3x.png in Resources */,
 				D4ABE1321B5EB14900C05B0F /* ingredients_list@2x.png in Resources */,
 				D4ABE1331B5EB14900C05B0F /* ingredients_list.png in Resources */,
@@ -446,7 +478,9 @@
 				7BFB749D1B5DD5CD004ED75F /* RoomDetailControllerViewController.xib in Resources */,
 				5E66EF381B57C21600F0F2B1 /* FloorsViewController.xib in Resources */,
 				5E66EF761B5BADA900F0F2B1 /* FloorMapView.xib in Resources */,
+				D40BF4C11B6A10A30045C85F /* CalendarCell.xib in Resources */,
 				D4ABE1341B5EB14900C05B0F /* point_objects.png in Resources */,
+				D40BF4B91B6A082A0045C85F /* CalendarRoomViewController.xib in Resources */,
 				5E66EEF91B55E97200F0F2B1 /* Images.xcassets in Resources */,
 				7BFB749F1B5DD5CD004ED75F /* RoomMettingsViewController.xib in Resources */,
 				5E66EF481B57C96400F0F2B1 /* FloorCell.xib in Resources */,
@@ -454,6 +488,7 @@
 				7B678EC31B5F50E100F0EA07 /* RoomSearcherViewController.xib in Resources */,
 				D4ABE1361B5EB14900C05B0F /* point_objects@2x.png in Resources */,
 				D4ABE1311B5EB14900C05B0F /* ingredients_list@3x.png in Resources */,
+				D40BF4C91B6A51580045C85F /* calendar@2x.png in Resources */,
 				7BFB74A41B5DD631004ED75F /* RoomMeetingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +545,7 @@
 				D40BF4B41B69F75B0045C85F /* CalendarManager.m in Sources */,
 				7BF4CE371B5EB9E30016A319 /* FavoriteRoomListViewController.m in Sources */,
 				5E681D2D1B5D4C2C00029DA6 /* BeaconLocalityManager.m in Sources */,
+				D40BF4B81B6A082A0045C85F /* CalendarRoomViewController.m in Sources */,
 				5E66EF691B5A1FB900F0F2B1 /* Meeting.m in Sources */,
 				7BF4CE331B5EB9D30016A319 /* FavoriteRoomsManager.m in Sources */,
 				5E66EEF41B55E97200F0F2B1 /* ViewController.m in Sources */,
@@ -527,11 +563,13 @@
 				5E66EF6C1B5A1FB900F0F2B1 /* RoomMeetingInfo.m in Sources */,
 				5E66EF6F1B5A1FE400F0F2B1 /* FloorLocalityInfo.m in Sources */,
 				5E681D2A1B5D46E300029DA6 /* Config.m in Sources */,
+				D40BF4C41B6A350A0045C85F /* BookRoom.m in Sources */,
 				5E66EF371B57C21600F0F2B1 /* FloorsViewController.m in Sources */,
 				7BFB749E1B5DD5CD004ED75F /* RoomMettingsViewController.m in Sources */,
 				D43698EC1B5BD73F00E9D094 /* BeaconItem.m in Sources */,
 				5E66EF6B1B5A1FB900F0F2B1 /* RoomLocalityInfo.m in Sources */,
 				7BFB749C1B5DD5CD004ED75F /* RoomDetailControllerViewController.m in Sources */,
+				D40BF4C01B6A10A30045C85F /* CalendarCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

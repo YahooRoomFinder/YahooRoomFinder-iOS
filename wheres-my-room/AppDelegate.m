@@ -14,6 +14,7 @@
 #import "KDNBeaconManager.h"
 #import "FavoriteRoomListViewController.h"
 #import "RoomSearcherViewController.h"
+#import "CalendarRoomViewController.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +34,7 @@
                                                 [Utils embedNavBarForViewController:[[RoomSearcherViewController alloc] init]]
                                                 ,[Utils embedNavBarForViewController:[[FavoriteRoomListViewController alloc] init]]
                                                 ,[Utils embedNavBarForViewController:[[FloorMapViewController2 alloc] init]]
+                                                ,[Utils embedNavBarForViewController:[[CalendarRoomViewController alloc] init]]
                                                 ]];
     [self.window setRootViewController:self.tabBarController];
     

@@ -10,8 +10,25 @@
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLCalendar.h"
 
+@class CalendarManager;
+
+@protocol CalendarManagerDelegate <NSObject>
+
+@required
+- (void)displayResultWithTicket:(GTLServiceTicket *)ticket
+             finishedWithObject:(GTLCalendarEvents *)events
+                          error:(NSError *)error;
+
+- (void)showAlert:(NSString *)title message:(NSString *)message;
+
+@end
+
 @interface CalendarManager : NSObject
 
 @property (nonatomic, strong) GTLServiceCalendar *service;
+@property (nonatomic, weak)   UIViewController<CalendarManagerDelegate> *delegate;
+
++ (CalendarManager *) sharedInstance;
+- (void)loadCalendar;
 
 @end
