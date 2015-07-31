@@ -171,6 +171,66 @@
                           @"ratioHeight": @(0.1136738056)
                           },
                       @{
+                          @"id": @"CR-TW-12FN-NanFangAo",
+                          @"ratioLocation": @[@(0.5496326455), @(0.2841784860)],
+                          @"ratioWidth": @(0.0481584),
+                          @"ratioHeight": @(0.06747215)
+                          },
+                      @{
+                          @"id": @"CR-TW-12FN-HoneymoonBay",
+                          @"ratioLocation": @[@(0.6656059560), @(0.2841784860)],
+                          @"ratioWidth": @(0.06584925),
+                          @"ratioHeight": @(0.06791898)
+                          },
+                      @{
+                          @"id": @"CR-TW-12FN-DongshanRiver",
+                          @"ratioLocation": @[@(0.7265410852), @(0.1447658311)],
+                          @"ratioWidth": @(0.03685592),
+                          @"ratioHeight": @(0.10902785)
+                          },
+                      @{
+                          @"id": @"VC-TW-12FN-DajiaRiver",
+                          @"ratioLocation": @[@(0.8833016193), @(0.2837316506)],
+                          @"ratioWidth": @(0.11302484),
+                          @"ratioHeight": @(0.06791899)
+                          },
+                      @{
+                          @"id": @"CR-TW-12FS-Cijin",
+                          @"ratioLocation": @[@(0.7001571599), @(0.6463596483)],
+                          @"ratioWidth": @(0.06262159),
+                          @"ratioHeight": @(0.06748572)
+                          },
+                      @{
+                          @"id": @"CR-TW-12FS-LianchiPond",
+                          @"ratioLocation": @[@(0.4828102552), @(0.6474392987)],
+                          @"ratioWidth": @(0.05362174),
+                          @"ratioHeight": @(0.06625437)
+                          },
+                      @{
+                          @"id": @"CR-TW-12FS-LiyuPond",
+                          @"ratioLocation": @[@(0.2382853401), @(0.7428453919)],
+                          @"ratioWidth": @(0.03829487),
+                          @"ratioHeight": @(0.11149959)
+                          },
+                      @{
+                          @"id": @"VC-TW-12FS-QixingTan",
+                          @"ratioLocation": @[@(0.0427145067), @(0.6454382755)],
+                          @"ratioWidth": @(0.076030223),
+                          @"ratioHeight": @(0.06712535)
+                          },
+                      @{
+                          @"id": @"CR-TW-12FS-TsengwenRiver",
+                          @"ratioLocation": @[@(0.4041441568), @(0.6461221598)],
+                          @"ratioWidth": @(0.07793321),
+                          @"ratioHeight": @(0.06701843)
+                          },
+                      @{
+                          @"id": @"CR-TW-12FS-XiziWan",
+                          @"ratioLocation": @[@(0.5308108067), @(0.7417058282)],
+                          @"ratioWidth": @(0.03806041),
+                          @"ratioHeight": @(0.11133117)
+                          },
+                      @{
                           @"id": @"CR-TW-12FS-LoveRiver",
                           @"ratioLocation": @[@(0.5631983736), @(0.6449581064)],
                           @"ratioWidth": @(0.07088467),
