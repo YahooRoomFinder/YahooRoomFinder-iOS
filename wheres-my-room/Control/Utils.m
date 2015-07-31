@@ -9,7 +9,7 @@
 #import "Utils.h"
 
 @implementation Utils
-+ (UIViewController*)embedNavBarForViewController:(UIViewController*)viewController {
++ (UINavigationController *)embedNavBarForViewController:(UIViewController*)viewController {
     return [[UINavigationController alloc] initWithRootViewController:viewController];
 }
 @end

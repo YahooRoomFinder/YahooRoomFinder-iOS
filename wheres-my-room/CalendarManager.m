@@ -7,6 +7,11 @@
 //
 
 #import "CalendarManager.h"
+#import "Utils.h"
+
+@interface CalendarManager()
+
+@end
 
 @implementation CalendarManager
 
@@ -48,9 +53,16 @@ static NSString *const kClientSecret = @"HDfJbfJPmIxemxPFwG9U63y1";
         [GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
     }
     if (!self.service.authorizer.canAuthorize) {
-        // Not yet authorized, request authorization by pushing the login UI onto the UI stack.
-        [self.delegate presentViewController:[self createAuthController] animated:YES completion:nil];
-        
+        UIAlertController *alterController = [UIAlertController alertControllerWithTitle:@"Login Google With Yahoo Inc." message:@"load your Google Calendar Meetings" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+            [self.delegate presentViewController: [self createAuthController] animated:YES completion:nil];
+        }];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }];
+        [alterController addAction:okAction];
+        [alterController addAction:cancelAction];
+        [self.delegate presentViewController:alterController animated:YES completion:nil];
     } else {
         [self fetchEvents];
     }

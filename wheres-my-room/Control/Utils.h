@@ -10,5 +10,5 @@
 #import <UIKit/UIKit.h>
 
 @interface Utils : NSObject
-+ (UIViewController*)embedNavBarForViewController:(UIViewController*)viewController;
++ (UINavigationController*)embedNavBarForViewController:(UIViewController*)viewController;
 @end

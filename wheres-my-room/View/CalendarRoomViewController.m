@@ -107,6 +107,7 @@ NSString * const CALENDER_CELL = @"CalendarCell";
     detailViewController.roomId = [selectedRoom.roomName substringToIndex:range.location];
     detailViewController.roomId = [[detailViewController.roomId componentsSeparatedByString:@" "] componentsJoinedByString:@""];
     [self.navigationController pushViewController:detailViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
